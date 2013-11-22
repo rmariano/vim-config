@@ -1,4 +1,8 @@
 vim-config
 ==========
 
-Vim configuration
+Vim configuration.
+This is an ongoing project of developing plugins for vim and setting
+a particular configuration for improving productivity.
+The goal is to develop a good configuration for the vim editor, tailored
+for Python development.
