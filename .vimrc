@@ -45,3 +45,6 @@ set statusline+=%=  "" Switch to the right side
 set statusline+=FileType:\ %y\ ""
 set statusline+=[Col:\ %c]\ -\ "" Column
 set statusline+=[Line:\ %l/%L]\ "" <Current_line>/<total_lines>
+
+"" I never used '.' anyway
+nmap . <nop>
