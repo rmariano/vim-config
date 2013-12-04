@@ -37,3 +37,11 @@ augroup filetype_python
     autocmd!
     autocmd FileType python nnoremap <buffer> <localleader>c I#<esc>
 augroup END
+
+"" Custom status bar
+set laststatus=2  ""Always display the status bar
+set statusline=%.20F  "" Full path of the file (up to 20c)
+set statusline+=%=  "" Switch to the right side
+set statusline+=FileType:\ %y\ ""
+set statusline+=[Col:\ %c]\ -\ "" Column
+set statusline+=[Line:\ %l/%L]\ "" <Current_line>/<total_lines>
