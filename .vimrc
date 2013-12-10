@@ -1,4 +1,5 @@
 "" Vim configurations
+syntax on
 colorscheme darkblue 
 set number
 "" highlight and do incremental search
@@ -48,3 +49,12 @@ set statusline+=[Line:\ %l/%L]\ "" <Current_line>/<total_lines>
 
 "" I never used '.' anyway
 nmap . <nop>
+
+"" Shortcut for stop the highlighting after a search,
+"" without disabling the option
+noremap m :nohlsearch<cr>
+
+"" Custom grep filter map
+nnoremap <leader>g :silent execute "grep! -R " . shellescape(expand("<cWORD>")) . " ."<cr>:copen<cr>
+nnoremap <leader>n :cnext<cr>
+nnoremap <leader>p :cprevious<cr>
