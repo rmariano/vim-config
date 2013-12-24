@@ -47,11 +47,11 @@ augroup END
 
 "" Custom status bar
 set laststatus=2  ""Always display the status bar
-set statusline=%.20F  "" Full path of the file (up to 20c)
+set statusline=%.30F  "" Full path of the file (up to 30c)
 set statusline+=%=  "" Switch to the right side
-set statusline+=FileType:\ %y\ ""
-set statusline+=[Col:\ %c]\ -\ "" Column
-set statusline+=[Line:\ %l/%L]\ "" <Current_line>/<total_lines>
+set statusline+=Type:\ %y "" File Type
+set statusline+=\ [Col:\ %c]\  "" Column
+set statusline+=[Line:\ %l/%L\(%p%%\)] "" <Current_line>/<total_lines>(<percentage>)
 
 "" I never used '.' anyway
 nmap . <nop>
