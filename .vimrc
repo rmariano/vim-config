@@ -1,6 +1,6 @@
 "" Vim configurations
 syntax on
-colorscheme darkblue 
+colorscheme darkblue
 set number
 "" highlight and do incremental search
 set hlsearch
@@ -33,10 +33,16 @@ noremap <Down> <nop>
 noremap <Left> <nop>
 noremap <Right> <nop>
 
-"" Shortcut for commenting out lines in python files
+"" look for trailing whitespaces (tw)
+nnoremap tw /\s\+$<cr>
+
+"" autocmd`s for python only
 augroup filetype_python
     autocmd!
+    "" Shortcut for commenting out lines in python files
     autocmd FileType python nnoremap <buffer> <localleader>c I#<esc>
+    "" Remove trailing whitespaces on save
+    autocmd BufWritePre *.py :%s/\s\+$//e
 augroup END
 
 "" Custom status bar
@@ -55,6 +61,5 @@ nmap . <nop>
 noremap m :nohlsearch<cr>
 
 "" Custom grep filter map
-nnoremap <leader>g :silent execute "grep! -R " . shellescape(expand("<cWORD>")) . " ."<cr>:copen<cr>
 nnoremap <leader>n :cnext<cr>
 nnoremap <leader>p :cprevious<cr>
