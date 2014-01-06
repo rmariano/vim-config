@@ -16,14 +16,16 @@ set tabstop=4
 set shiftwidth=4
 set shiftround
 
+set autoindent
+
 "" Enable W for saving as an alias
 command! W w
 
 filetype plugin indent on
 
 "" set <leader> as -
-let mapleader = "-"
-let maplocalleader = "-"
+let mapleader="-"
+let maplocalleader="-"
 
 set wrap
 
@@ -43,22 +45,23 @@ augroup filetype_python
     autocmd FileType python nnoremap <buffer> <localleader>c I#<esc>
     "" Remove trailing whitespaces on save
     autocmd BufWritePre *.py :%s/\s\+$//e
+    set textwidth=79
 augroup END
 
 "" Custom status bar
 set laststatus=2  ""Always display the status bar
-set statusline=%.30F  "" Full path of the file (up to 30c)
-set statusline+=%=  "" Switch to the right side
-set statusline+=Type:\ %y "" File Type
-set statusline+=\ [Col:\ %c]\  "" Column
-set statusline+=[Line:\ %l/%L\(%p%%\)] "" <Current_line>/<total_lines>(<percentage>)
+set statusline=%.30F  ""Full path of the file (up to 30c)
+set statusline+=%=  ""Switch to the right side
+set statusline+=Type:\ %y ""File Type
+set statusline+=\ [Col:\ %c]\  ""Column
+set statusline+=[Line:\ %l/%L\(%p%%\)] ""<Current_line>/<total_lines>(%)
 
-"" I never used '.' anyway
-nmap . <nop>
+"" Color the statusline
+highlight StatusLine ctermbg=darkblue ctermfg=white
 
-"" Shortcut for stop the highlighting after a search,
-"" without disabling the option
-noremap m :nohlsearch<cr>
+"" Shortcut for stop the highlighting after a search
+"" and at the same time disable '.' for repeating the last command
+nnoremap . :nohlsearch<cr>
 
 "" Custom grep filter map
 nnoremap <leader>n :cnext<cr>
