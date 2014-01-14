@@ -1,6 +1,7 @@
 "" Vim configurations
+set t_Co=256
 syntax on
-colorscheme darkblue
+colorscheme tromso
 set number
 "" highlight and do incremental search
 set hlsearch
@@ -57,7 +58,7 @@ set statusline+=\ [Col:\ %c]\  ""Column
 set statusline+=[Line:\ %l/%L\(%p%%\)] ""<Current_line>/<total_lines>(%)
 
 "" Color the statusline
-highlight StatusLine ctermbg=darkblue ctermfg=white
+""highlight StatusLine ctermbg=darkblue ctermfg=white
 
 "" Shortcut for stop the highlighting after a search
 "" and at the same time disable '.' for repeating the last command
