@@ -51,14 +51,10 @@ augroup END
 
 "" Custom status bar
 set laststatus=2  ""Always display the status bar
-set statusline=%.30F  ""Full path of the file (up to 30c)
+set statusline=%.30F%M  ""Full path of the file (up to 30c),<modif flag>
 set statusline+=%=  ""Switch to the right side
-set statusline+=Type:\ %y ""File Type
-set statusline+=\ [Col:\ %c]\  ""Column
-set statusline+=[Line:\ %l/%L\(%p%%\)] ""<Current_line>/<total_lines>(%)
-
-"" Color the statusline
-""highlight StatusLine ctermbg=darkblue ctermfg=white
+set statusline+=Type:%y ""File Type
+set statusline+=\ [Col:%c\ Line:%l/%L\(%p%%\)] ""<col> <currline>/<totlines>(%)
 
 "" Shortcut for stop the highlighting after a search
 "" and at the same time disable '.' for repeating the last command

@@ -34,5 +34,7 @@ nosetests.xml
 .mr.developer.cfg
 .project
 .pydevproject
+
+# Swap Files
 *.sw[op]
 *~
