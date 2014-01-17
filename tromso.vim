@@ -22,7 +22,7 @@ highlight Todo ctermfg=red ctermbg=darkblue cterm=bold
 highlight StatusLine ctermbg=darkblue ctermfg=white cterm=bold
 highlight StatusLineNC ctermbg=blue ctermfg=white cterm=none
 
-highlight ColorColumn ctermbg=006 cterm=none
+highlight ColorColumn ctermbg=234 cterm=none
 
 highlight Search ctermbg=darkblue ctermfg=white cterm=underline
 highlight IncSearch	ctermbg=blue  ctermfg=white cterm=none
@@ -39,14 +39,13 @@ highlight PmenuSel ctermbg=029 ctermfg=214 cterm=bold
 highlight PmenuSbar ctermbg=048
 
 
-"" Customized colors
-highlight Statement	ctermfg=202 cterm=bold guifg=#ffff60 gui=none
-highlight Identifier ctermfg=143 guifg=#40ffff cterm=bold
-
+"" [dev] Customized colors
+highlight Statement	ctermbg=none ctermfg=202 cterm=bold cterm=bold
+highlight Identifier ctermbg=none  ctermfg=143 cterm=bold
+highlight Comment ctermbg=none ctermfg=196 cterm=none
 
 
 "" Original: To be modified
-hi Comment	guifg=#80a0ff ctermfg=darkred
 hi Constant	ctermfg=magenta guifg=#ffa0a0 cterm=none
 hi Special	ctermfg=brown guifg=Orange cterm=none gui=none
 hi PreProc	ctermfg=magenta guifg=#ff80ff gui=none cterm=none
