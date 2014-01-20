@@ -22,7 +22,7 @@ Again, configuration can be made by copying the files or by creating symlinks.
 
    cp <colorscheme>.vim ~/.vim/colors
 
-## Disclaimer
+## Colorscheme plugin
 The colorscheme requires the terminal to support 256 colors. Most of the
 terminals already support this but some multiplexers like tmux might require to
 be run with `tmux -2
