@@ -36,7 +36,7 @@ noremap <Left> <nop>
 noremap <Right> <nop>
 
 "" look for trailing whitespaces (tw)
-nnoremap tw /\s\+$<cr>
+nnoremap <leader>tw /\s\+$<cr>
 
 "" autocmd`s for python only
 augroup filetype_python
