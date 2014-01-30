@@ -1,4 +1,4 @@
-Vim-config
+Vim-config Plugin
 ==========
 
 Vim configuration.
@@ -20,11 +20,18 @@ If there are any colorschemes you would like to install, I suggest to copy
 them to ~/.vim/colors (create the directory if it does not exist).
 Again, configuration can be made by copying the files or by creating symlinks.
 
-   cp <colorscheme>.vim ~/.vim/colors
+
+    cp \<colorscheme\>.vim ~/.vim/colors
 
 ## Colorscheme plugin
 The colorscheme requires the terminal to support 256 colors. Most of the
 terminals already support this but some multiplexers like tmux might require to
-be run with `tmux -2
+be run with `tmux -2`
+
+In addition, just the command-line classic vim version is supported, so no
+support for gvim or graphical versions is included for the colorscheme although
+pull requests are accepted.
+
+------
 
 Enjoy!
