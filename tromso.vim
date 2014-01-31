@@ -11,7 +11,7 @@ endif
 
 let colors_name = "tromso"
 
-highlight Normal ctermbg=black ctermfg=white cterm=none
+highlight Normal ctermbg=232 ctermfg=white cterm=none
 highlight ErrorMsg ctermbg=darkred ctermfg=white cterm=bold
 highlight Visual ctermbg=darkblue ctermfg=white cterm=none
 highlight VisualNOS ctermbg=darkblue ctermfg=white cterm=none
@@ -19,8 +19,8 @@ highlight VisualNOS ctermbg=darkblue ctermfg=white cterm=none
 highlight LineNr ctermbg=none ctermfg=cyan cterm=none
 highlight Todo ctermfg=red ctermbg=darkblue cterm=bold
 
-highlight StatusLine ctermbg=018 ctermfg=white cterm=bold
-highlight StatusLineNC ctermbg=blue ctermfg=white cterm=none
+highlight StatusLine ctermbg=024 ctermfg=white cterm=bold
+highlight StatusLineNC ctermbg=031 ctermfg=white cterm=none
 
 highlight ColorColumn ctermbg=234 cterm=none
 
@@ -33,7 +33,7 @@ highlight Folded ctermbg=darkgrey ctermfg=white cterm=bold
 highlight FoldColumn ctermbg=darkgrey ctermfg=white cterm=bold
 
 
-""Menu bar colors
+"" Menu bar colors
 highlight Pmenu ctermbg=023 ctermfg=220 cterm=none
 highlight PmenuSel ctermbg=029 ctermfg=214 cterm=bold
 highlight PmenuSbar ctermbg=048
