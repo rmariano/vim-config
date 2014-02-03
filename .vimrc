@@ -81,3 +81,5 @@ endfunction
 call SetPageLimit()  " Enabled by default
 
 nnoremap <leader>p :set paste!<cr>
+
+set cursorline

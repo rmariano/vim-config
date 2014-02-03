@@ -22,7 +22,7 @@ highlight Todo ctermfg=red ctermbg=darkblue cterm=bold
 highlight StatusLine ctermbg=024 ctermfg=white cterm=bold
 highlight StatusLineNC ctermbg=031 ctermfg=white cterm=none
 
-highlight ColorColumn ctermbg=234 cterm=none
+highlight ColorColumn ctermbg=235 cterm=none
 
 highlight Search ctermbg=darkblue ctermfg=white cterm=underline
 highlight IncSearch	ctermbg=blue  ctermfg=white cterm=none
@@ -31,6 +31,9 @@ highlight WildMenu ctermbg=166 ctermfg=white cterm=bold
 
 highlight Folded ctermbg=darkgrey ctermfg=white cterm=bold
 highlight FoldColumn ctermbg=darkgrey ctermfg=white cterm=bold
+
+highlight CursorLine ctermbg=238 ctermfg=none cterm=none
+highlight CursorLineNr ctermbg=232 ctermfg=white cterm=bold
 
 
 "" Menu bar colors
@@ -44,10 +47,10 @@ highlight Statement	ctermbg=none ctermfg=202 cterm=bold cterm=bold
 highlight Identifier ctermbg=none  ctermfg=143 cterm=bold
 highlight Comment ctermbg=none ctermfg=196 cterm=none
 highlight Constant ctermbg=none ctermfg=117 cterm=none
+highlight type ctermfg=green guifg=#60ff60 gui=none cterm=none
+highlight PreProc ctermfg=magenta guifg=#ff80ff gui=none cterm=none
 
 
 "" Original: To be modified
 hi Special	ctermfg=brown guifg=Orange cterm=none gui=none
-hi PreProc	ctermfg=magenta guifg=#ff80ff gui=none cterm=none
-hi type		ctermfg=green guifg=#60ff60 gui=none cterm=none
 hi Underlined	cterm=underline term=underline
