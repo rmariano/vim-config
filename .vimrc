@@ -30,13 +30,7 @@ let maplocalleader="-"
 
 set wrap
 
-"" cancel the arrow keys
-noremap <Up> <nop>
-noremap <Down> <nop>
-noremap <Left> <nop>
-noremap <Right> <nop>
-
-"" look for trailing whitespaces (tw)
+"" look for trailing white spaces (tw)
 nnoremap <leader>tw /\s\+$<cr>
 
 set textwidth=79
