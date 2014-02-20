@@ -60,9 +60,10 @@ set statusline+=\ [Col:%c\ Line:%l/%L\(%p%%\)] ""<col> <currline>/<totlines>(%)
 "" and at the same time disable '.' for repeating the last command
 nnoremap . :nohlsearch<cr>
 
-"" Custom grep filter map
+"" Custom mappings for quickfix window
 nnoremap <leader>n :cnext<cr>
-nnoremap <leader>p :cprevious<cr>
+nnoremap <leader>b :cprevious<cr>
+nnoremap <leader>q :cclose<cr>
 
 "" Mark the limit of <textwidth>
 nnoremap <leader>j :call SetPageLimit()<cr>
