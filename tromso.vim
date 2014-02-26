@@ -16,8 +16,8 @@ highlight ErrorMsg ctermbg=darkred ctermfg=white cterm=bold
 highlight Visual ctermbg=darkblue ctermfg=white cterm=none
 highlight VisualNOS ctermbg=darkblue ctermfg=white cterm=none
 
-highlight LineNr ctermbg=none ctermfg=cyan cterm=none
-highlight Todo ctermfg=red ctermbg=darkblue cterm=bold
+highlight LineNr ctermbg=235 ctermfg=250 cterm=bold
+highlight Todo ctermbg=darkblue ctermfg=red cterm=bold
 
 highlight StatusLine ctermbg=024 ctermfg=white cterm=bold
 highlight StatusLineNC ctermbg=031 ctermfg=white cterm=none
@@ -33,24 +33,18 @@ highlight Folded ctermbg=darkgrey ctermfg=white cterm=bold
 highlight FoldColumn ctermbg=darkgrey ctermfg=white cterm=bold
 
 highlight CursorLine ctermbg=238 ctermfg=none cterm=none
-highlight CursorLineNr ctermbg=232 ctermfg=white cterm=bold
-
+highlight CursorLineNr ctermbg=232 ctermfg=255 cterm=bold
 
 "" Menu bar colors
 highlight Pmenu ctermbg=023 ctermfg=220 cterm=none
 highlight PmenuSel ctermbg=029 ctermfg=214 cterm=bold
 highlight PmenuSbar ctermbg=048
 
-
 "" [dev] Customized colors
 highlight Statement	ctermbg=none ctermfg=202 cterm=bold cterm=bold
 highlight Identifier ctermbg=none  ctermfg=143 cterm=bold
 highlight Comment ctermbg=none ctermfg=196 cterm=none
 highlight Constant ctermbg=none ctermfg=117 cterm=none
-highlight type ctermfg=green guifg=#60ff60 gui=none cterm=none
-highlight PreProc ctermfg=magenta guifg=#ff80ff gui=none cterm=none
-
-
-"" Original: To be modified
-hi Special	ctermfg=brown guifg=Orange cterm=none gui=none
-hi Underlined	cterm=underline term=underline
+highlight type ctermfg=green cterm=none
+highlight PreProc ctermfg=magenta cterm=none
+highlight Underlined cterm=underline term=underline
