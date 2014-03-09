@@ -32,6 +32,7 @@ let maplocalleader="-"
 set wrap
 set cursorline
 set wildignore=*.pyc
+set showmode
 
 "" look for trailing white spaces (tw)
 nnoremap <leader>tw /\s\+$<cr>

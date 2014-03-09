@@ -35,6 +35,12 @@ highlight FoldColumn ctermbg=darkgrey ctermfg=white cterm=bold
 highlight CursorLine ctermbg=238 ctermfg=none cterm=none
 highlight CursorLineNr ctermbg=232 ctermfg=255 cterm=bold
 
+highlight ModeMsg ctermbg=065 ctermfg=white cterm=bold
+
+highlight TabLineSel ctermbg=024 ctermfg=white cterm=bold
+highlight TabLine ctermbg=245 ctermfg=white cterm=bold
+highlight TabLineFill ctermbg=244 cterm=none
+
 "" Menu bar colors
 highlight Pmenu ctermbg=023 ctermfg=220 cterm=none
 highlight PmenuSel ctermbg=029 ctermfg=214 cterm=bold
