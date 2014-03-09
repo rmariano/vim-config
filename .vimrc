@@ -87,3 +87,5 @@ function! SetCustomStatusLine(alert_msg)
 endfunction
 
 call SetCustomStatusLine("")
+
+nnoremap ;t :vimgrep /\<TODO\>/j **/*.py<CR>:cw<CR>
