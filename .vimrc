@@ -76,16 +76,39 @@ endfunction
 
 call SetPageLimit()  " Enabled by default
 
-nnoremap <leader>p :set paste!<cr>
 
 function! SetCustomStatusLine(alert_msg)
-    set statusline=""
-    set statusline+=%.30F%M  ""Full path of the file (up to 30c),<modif flag>
-    set statusline+=%=  ""Switch to the right side
-    set statusline+=Type:%y ""File Type
-    set statusline+=\ [Col:%c\ Line:%l/%L\(%p%%\)] ""<col> <line>/<tot>(%)
+    "" Returns the string for setting the status line
+    let st_txt = ''
+    ""Full path of the file (up to 30c),<modif flag>
+    let st_txt .= '%.30F%M'
+
+    "" Custom text with different color (user-defined in colorcheme & restored)
+    let st_txt .= "%2*"
+    let st_txt .= a:alert_msg
+    let st_txt .= "%1*"
+
+    "" Switch to the right side
+    let st_txt .= '%='
+    "" File Type
+    let st_txt .= 'Type:%y'
+    ""<col> <line>/<tot>(%)
+    let st_txt .= '[Col:%c Line:%l/%L(%p%%)]'
+    return st_txt
 endfunction
 
-call SetCustomStatusLine("")
+set statusline=%!SetCustomStatusLine('')
 
 nnoremap ;t :vimgrep /\<TODO\>/j **/*.py<CR>:cw<CR>
+
+function! TogglePasteMode()
+    set paste!
+    if &paste
+        set statusline=%!SetCustomStatusLine('[PASTE]')
+    else
+        set statusline=%!SetCustomStatusLine('')
+    endif
+    return &paste
+endfunction
+
+nnoremap <leader>p :call TogglePasteMode()<CR>

@@ -11,6 +11,11 @@ endif
 
 let colors_name = "tromso"
 
+"" User-defined colors
+"" User1 Same as StatusLine
+highlight User1 ctermbg=024 ctermfg=white cterm=bold
+highlight User2 ctermbg=darkred ctermfg=white cterm=bold
+
 highlight Normal ctermbg=232 ctermfg=white cterm=none
 highlight ErrorMsg ctermbg=darkred ctermfg=white cterm=bold
 highlight Visual ctermbg=darkblue ctermfg=white cterm=none
