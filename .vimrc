@@ -50,7 +50,6 @@ augroup END
 "" Custom status bar
 set laststatus=2  ""Always display the status bar
 
-
 "" Shortcut for stop the highlighting after a search
 "" and at the same time disable '.' for repeating the last command
 nnoremap . :nohlsearch<cr>
@@ -60,6 +59,8 @@ nnoremap <leader>n :cnext<cr>
 nnoremap <leader>b :cprevious<cr>
 nnoremap <leader>q :cclose<cr>
 
+"" Search dev tags
+nnoremap ;t :vimgrep /\(TODO\\|FIXME\)/j **/*.py<CR>:cw<CR>
 "" Mark the limit of <text-width>
 nnoremap <leader>j :call SetPageLimit()<cr>
 
@@ -98,8 +99,6 @@ function! SetCustomStatusLine(alert_msg)
 endfunction
 
 set statusline=%!SetCustomStatusLine('')
-
-nnoremap ;t :vimgrep /\<TODO\>/j **/*.py<CR>:cw<CR>
 
 function! TogglePasteMode()
     set paste!
