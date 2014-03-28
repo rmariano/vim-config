@@ -34,7 +34,7 @@ set cursorline
 set wildignore=*.pyc
 set showmode
 
-"" look for trailing white spaces (tw)
+"" look for trailing white spaces
 nnoremap <leader>tw /\s\+$<cr>
 
 set textwidth=79
@@ -59,8 +59,24 @@ nnoremap <leader>n :cnext<cr>
 nnoremap <leader>b :cprevious<cr>
 nnoremap <leader>q :cclose<cr>
 
-"" Search dev tags
-nnoremap ;t :vimgrep /\(TODO\\|FIXME\)/j **/*.py<CR>:cw<CR>
+nnoremap ;t :call SearchDevTags()<CR>
+
+function! SearchDevTags()
+   let status = 0
+   try
+       execute ":vimgrep /\\(TODO\\|FIXME\\)/j **/*.py"
+       let status = 1
+   catch /E480:/
+       highlight MSGOK ctermbg=darkgreen ctermfg=white cterm=bold
+       echohl MSGOK | echom "(OK - No pending tasks :-)" | echohl None
+   finally
+       if status
+           copen  "quick-fix window
+       endif
+   endtry
+   return status
+endfunction
+
 "" Mark the limit of <text-width>
 nnoremap <leader>j :call SetPageLimit()<cr>
 
@@ -84,7 +100,7 @@ function! SetCustomStatusLine(alert_msg)
     ""Full path of the file (up to 30c),<modif flag>
     let st_txt .= '%.30F%M'
 
-    "" Custom text with different color (user-defined in colorcheme & restored)
+    "" Different color (user-defined in color scheme & restored)
     let st_txt .= "%2*"
     let st_txt .= a:alert_msg
     let st_txt .= "%1*"
