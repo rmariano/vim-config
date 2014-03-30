@@ -22,10 +22,8 @@ set tabstop=4
 set shiftwidth=4
 set shiftround
 set softtabstop=4
-
 set autoindent
 set smartindent
-
 set textwidth=79
 
 "" Enable W for saving as an alias
@@ -119,3 +117,6 @@ call SetPageLimit()  " Enabled by default
 set statusline=%!SetCustomStatusLine('')
 
 nnoremap ;t :vimgrep /\<TODO\>/j **/*.py<CR>:cw<CR>
+
+"" Other mappings
+map <F2>  :setlocal spell spelllang=en_gb<CR>
