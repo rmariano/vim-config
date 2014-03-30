@@ -16,21 +16,22 @@ by git.
 
     cp .vimrc ~/.vimrc
 
-If there are any color-schemes you would like to install, I suggest to copy
+If there are any colour schemes you would like to install, I suggest to copy
 them to ~/.vim/colors (create the directory if it does not exist).
 Again, configuration can be made by copying the files or by creating symlinks.
 
 
-    cp \<colorscheme\>.vim ~/.vim/colors
+    cp colors/\<colorscheme\>.vim ~/.vim/colors/
 
-## Color scheme Plug-in
-The color scheme requires the terminal to support 256 colors. Most of the
+## Colour scheme Plug-in
+
+The colour scheme requires the terminal to support 256 colours. Most of the
 terminals already support this, but some terminal multiplexers like `tmux`
 might require to be run as: `tmux -2` in order to support this.
 
 In addition, just the command-line classic Vim version is supported, so no
-support for Gvim or graphical versions is included for the color scheme although
-pull requests are accepted.
+support for ``Gvim`` or graphical versions is included for the colour scheme
+although pull requests are accepted.
 
 ------
 
