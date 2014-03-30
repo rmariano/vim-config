@@ -1,4 +1,9 @@
 "" Vim configurations
+" Maintainer: Mariano Anaya
+" Last Change:
+" Created: 01 Jan 2014
+""""""""""""""""""""""""""""""
+
 set t_Co=256  "" Vim & terminal Mode in 256-colors
 syntax on
 colorscheme tromso
@@ -9,21 +14,25 @@ set incsearch
 "" show all menu options
 set wildmenu
 "" New escaping sequence, double-tab for returning to normal mode
-imap <Tab><Tab> <Esc>
+inoremap <Tab><Tab> <Esc>
 
-"" \t handled properly
+"" \t handled properly & PEP8
 set expandtab
 set tabstop=4
 set shiftwidth=4
 set shiftround
+set softtabstop=4
 
 set autoindent
 set smartindent
 
+set textwidth=79
+
 "" Enable W for saving as an alias
 command! W w
 
-filetype plugin indent on
+filetype plugin on
+filetype indent on
 
 "" set <leader> as -
 let mapleader="-"
@@ -50,7 +59,6 @@ augroup END
 "" Custom status bar
 set laststatus=2  ""Always display the status bar
 
-
 "" Shortcut for stop the highlighting after a search
 "" and at the same time disable '.' for repeating the last command
 nnoremap . :nohlsearch<cr>
@@ -60,9 +68,7 @@ nnoremap <leader>n :cnext<cr>
 nnoremap <leader>b :cprevious<cr>
 nnoremap <leader>q :cclose<cr>
 
-"" Mark the limit of <text-width>
-nnoremap <leader>j :call SetPageLimit()<cr>
-
+"" Functions definition
 function! SetPageLimit()
     if &colorcolumn
         let &colorcolumn=0
@@ -73,9 +79,6 @@ function! SetPageLimit()
         return 1
     endif
 endfunction
-
-call SetPageLimit()  " Enabled by default
-
 
 function! SetCustomStatusLine(alert_msg)
     "" Returns the string for setting the status line
@@ -97,10 +100,6 @@ function! SetCustomStatusLine(alert_msg)
     return st_txt
 endfunction
 
-set statusline=%!SetCustomStatusLine('')
-
-nnoremap ;t :vimgrep /\<TODO\>/j **/*.py<CR>:cw<CR>
-
 function! TogglePasteMode()
     set paste!
     if &paste
@@ -110,5 +109,13 @@ function! TogglePasteMode()
     endif
     return &paste
 endfunction
+"" End functions definition
 
+"" Mark the limit of <text-width>
+nnoremap <leader>j :call SetPageLimit()<CR>
 nnoremap <leader>p :call TogglePasteMode()<CR>
+
+call SetPageLimit()  " Enabled by default
+set statusline=%!SetCustomStatusLine('')
+
+nnoremap ;t :vimgrep /\<TODO\>/j **/*.py<CR>:cw<CR>
