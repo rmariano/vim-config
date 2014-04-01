@@ -41,7 +41,7 @@ set cursorline
 set wildignore=*.pyc
 set showmode
 
-"" look for trailing white spaces (tw)
+"" look for trailing white spaces
 nnoremap <leader>tw /\s\+$<cr>
 
 set textwidth=79
@@ -57,6 +57,7 @@ augroup END
 "" Custom status bar
 set laststatus=2  ""Always display the status bar
 
+
 "" Shortcut for stop the highlighting after a search
 "" and at the same time disable '.' for repeating the last command
 nnoremap . :nohlsearch<cr>
@@ -66,7 +67,23 @@ nnoremap <leader>n :cnext<cr>
 nnoremap <leader>b :cprevious<cr>
 nnoremap <leader>q :cclose<cr>
 
-"" Functions definition
+"" Function definitions
+function! SearchDevTags()
+   let status = 0
+   try
+       execute ":vimgrep /\\(TODO\\|FIXME\\)/j **/*.py"
+       let status = 1
+   catch /E480:/
+       highlight MSGOK ctermbg=darkgreen ctermfg=white cterm=bold
+       echohl MSGOK | echom "(OK - No pending tasks :-)" | echohl None
+   finally
+       if status
+           copen  "quick-fix window
+       endif
+   endtry
+   return status
+endfunction
+
 function! SetPageLimit()
     if &colorcolumn
         let &colorcolumn=0
@@ -84,7 +101,7 @@ function! SetCustomStatusLine(alert_msg)
     ""Full path of the file (up to 30c),<modif flag>
     let st_txt .= '%.30F%M'
 
-    "" Custom text with different color (user-defined in colorcheme & restored)
+    "" Different color (user-defined in color scheme & restored)
     let st_txt .= "%2*"
     let st_txt .= a:alert_msg
     let st_txt .= "%1*"
@@ -107,16 +124,16 @@ function! TogglePasteMode()
     endif
     return &paste
 endfunction
-"" End functions definition
+"" End function definitions
 
 "" Mark the limit of <text-width>
 nnoremap <leader>j :call SetPageLimit()<CR>
 nnoremap <leader>p :call TogglePasteMode()<CR>
+nnoremap ;t :call SearchDevTags()<CR>
 
 call SetPageLimit()  " Enabled by default
 set statusline=%!SetCustomStatusLine('')
 
-nnoremap ;t :vimgrep /\<TODO\>/j **/*.py<CR>:cw<CR>
 
 "" Other mappings
 map <F2>  :setlocal spell spelllang=en_gb<CR>
