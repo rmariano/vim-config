@@ -1,5 +1,7 @@
-Vim Configuration
-=================
+#Vim Configuration
+
+[![License](http://img.shields.io/license/MIT.png?color=green)](http://opensource.org/licenses/MIT)
+
 
 Vim configuration.
 This is an ongoing project of developing Plug-ins for Vim and setting
