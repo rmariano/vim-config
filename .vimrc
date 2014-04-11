@@ -109,8 +109,10 @@ function! SetCustomStatusLine(alert_msg)
     "" Switch to the right side
     let st_txt .= '%='
     "" File Type
-    let st_txt .= 'Type:%y'
+    let st_txt .= "%3*"
+    let st_txt .= '%y'
     ""<col> <line>/<tot>(%)
+    let st_txt .= "%4*"
     let st_txt .= '[Col:%c Line:%l/%L(%p%%)]'
     return st_txt
 endfunction
