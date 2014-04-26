@@ -130,6 +130,15 @@ function! TogglePasteMode()
     endif
     return &paste
 endfunction
+
+function! ToggleLangCheck()
+    if !&spell
+        setlocal spell spelllang=en_gb
+    else
+        setlocal nospell
+    endif
+    return &spell
+endfunction
 "" End function definitions
 
 "" Mark the limit of <text-width>
@@ -139,4 +148,4 @@ nnoremap ;t :call SearchDevTags()<CR>
 
 call SetPageLimit()  " Enabled by default
 set statusline=%!SetCustomStatusLine('')
-map <F2>  :setlocal spell spelllang=en_gb<CR>
+map <F2>  :call ToggleLangCheck()<CR>
