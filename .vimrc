@@ -29,8 +29,7 @@ set textwidth=79
 "" Enable W for saving as an alias
 command! W w
 
-filetype plugin on
-filetype indent on
+filetype plugin indent on
 
 "" set <leader> as -
 let mapleader="-"
@@ -43,6 +42,11 @@ set showmode
 
 "" look for trailing white spaces
 nnoremap <leader>tw /\s\+$<cr>
+
+augroup filetype_markdown
+    autocmd!
+    autocmd BufNew,BufNewFile,BufRead *.md setlocal filetype=markdown
+augroup END
 
 set textwidth=79
 "" autocmd`s for python only
@@ -135,7 +139,4 @@ nnoremap ;t :call SearchDevTags()<CR>
 
 call SetPageLimit()  " Enabled by default
 set statusline=%!SetCustomStatusLine('')
-
-
-"" Other mappings
 map <F2>  :setlocal spell spelllang=en_gb<CR>
