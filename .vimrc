@@ -91,12 +91,11 @@ endfunction
 function! SetPageLimit()
     if &colorcolumn
         let &colorcolumn=0
-        return 0
     else
         let s:margin=join(range(&textwidth+1, &columns+1), ",")
         let &colorcolumn=s:margin
-        return 1
     endif
+    return &colorcolumn
 endfunction
 
 function! SetCustomStatusLine(alert_msg)

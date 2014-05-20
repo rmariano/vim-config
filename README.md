@@ -36,7 +36,7 @@ Or
 ```
 
 
-##Manual
+##Manual Installation
 
 For setting this configuration, you should copy the configuration files to
 the Vim directory, or create symlinks if you want to update the configuration
@@ -64,6 +64,32 @@ might require to be run as: ``tmux -2`` in order to support this.
 In addition, just the command-line classic Vim version is supported, so no
 support for ``Gvim`` or graphical versions is included for the colour scheme
 although pull requests are accepted.
+
+# Features
+ * Mapping `<tab>` to `<Esc>` for faster access.
+ * PEP-8 general rules of text: automatically handling spaces instead of tabs,
+   proper indentation, wrap text to 79 columns, margin set at col 80
+   (toggle-able), etc.
+ * `<F2>` for toggling spell check.
+ * `.` sometimes drives to issues, so it was remapped to `nohlsearch`.
+ * `<leader>` + `p` is mapped to toggle paste mode, with the label indicating
+   in the status bar if is active or not.
+ * A colour scheme I like.
+ * A status line with useful information (file name with path, modification
+   flag, file type, column, lines, and position (in %).
+ * `;t` available for searching development tags, such as `TODO` or `FIXME`,
+   rendering the results in a quick fix window. Warning: searches recursively.
+ * `<leader>n`, `<leader>p` for moving to the next and previous entries in the
+   quick-fix window, respectively. `<leader>q` for closing it.
+
+
+# Other plug-ins I use
+I prefer to keep the `.vimrc` configuration as simple as possible, so I would
+like not to have to install plug-ins. That said, some are needed, which are:
+
+ * PEP8.vim (looking for a better alternative), for running a PEP-8 check by
+   pressing `<F5>`.
+ * Pyflakes: for detecting syntax errors/issues in the code.
 
 ------
 
