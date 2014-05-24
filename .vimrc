@@ -22,9 +22,6 @@ set tabstop=4
 set shiftwidth=4
 set shiftround
 set softtabstop=4
-set autoindent
-set smartindent
-set textwidth=79
 
 "" Enable W for saving as an alias
 command! W w
@@ -41,30 +38,18 @@ set wildignore=*.pyc
 set showmode
 
 "" look for trailing white spaces
-nnoremap <leader>tw /\s\+$<cr>
+nnoremap <leader>tw /\s\+$<CR>
 
 augroup filetype_markdown
     autocmd!
     autocmd BufNew,BufNewFile,BufRead *.md setlocal filetype=markdown
 augroup END
 
-set textwidth=79
-"" autocmd`s for python only
-augroup filetype_python
-    autocmd!
-    "" Shortcut for commenting out lines in python files
-    autocmd FileType python nnoremap <buffer> <localleader>c I#<esc>
-    "" Remove trailing white spaces on saving *.py files
-    autocmd BufWritePre *.py :%s/\s\+$//e
-augroup END
-
-"" Custom status bar
 set laststatus=2  ""Always display the status bar
-
 
 "" Shortcut for stop the highlighting after a search
 "" and at the same time disable '.' for repeating the last command
-nnoremap . :nohlsearch<cr>
+nnoremap . :nohlsearch<CR>
 
 "" Custom mappings for quick-fix window
 nnoremap <leader>n :cnext<cr>
@@ -145,6 +130,16 @@ nnoremap <leader>j :call SetPageLimit()<CR>
 nnoremap <leader>p :call TogglePasteMode()<CR>
 nnoremap ;t :call SearchDevTags()<CR>
 
-call SetPageLimit()  " Enabled by default
 set statusline=%!SetCustomStatusLine('')
-map <F2>  :call ToggleLangCheck()<CR>
+map <F2> :call ToggleLangCheck()<CR>
+
+"" autocmd`s for python only
+augroup Python
+    autocmd!
+    autocmd FileType python set textwidth=79
+    autocmd FileType python call SetPageLimit()
+    "" Shortcut for commenting out lines in python files
+    autocmd FileType python nnoremap <buffer> <localleader>c I#<esc>
+    "" Remove trailing white spaces on saving *.py files
+    autocmd BufWritePre *.py :%s/\s\+$//e
+augroup END
