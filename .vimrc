@@ -47,9 +47,7 @@ augroup END
 
 set laststatus=2  ""Always display the status bar
 
-"" Shortcut for stop the highlighting after a search
-"" and at the same time disable '.' for repeating the last command
-nnoremap . :nohlsearch<CR>
+nnoremap <leader>nh :nohlsearch<CR>
 
 "" Custom mappings for quick-fix window
 nnoremap <leader>n :cnext<cr>
