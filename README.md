@@ -71,7 +71,7 @@ although pull requests are accepted.
    proper indentation, wrap text to 79 columns, margin set at col 80
    (toggle-able), etc.
  * `<F2>` for toggling spell check.
- * `.` sometimes drives to issues, so it was remapped to `nohlsearch`.
+ * ``<leader>`` +  ``nh`` as a shortcut for ``:nohlsearch``
  * `<leader>` + `p` is mapped to toggle paste mode, with the label indicating
    in the status bar if is active or not.
  * A colour scheme I like.
