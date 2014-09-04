@@ -13,6 +13,8 @@ set hlsearch
 set incsearch
 "" show all menu options
 set wildmenu
+set showmatch
+set history=50
 "" New escaping sequence, double-tab for returning to normal mode
 inoremap <Tab><Tab> <Esc>
 
@@ -39,6 +41,7 @@ set showmode
 
 "" look for trailing white spaces
 nnoremap <leader>tw /\s\+$<CR>
+nnoremap <leader>w :%s/\s\+$//g<CR>
 
 augroup filetype_markdown
     autocmd!
