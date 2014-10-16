@@ -74,8 +74,13 @@ function! SearchDevTags()
    return status
 endfunction
 
-function! SetPageLimit()
-    if &colorcolumn
+function! TogglePageLimit(...)
+    if a:0 > 0
+        let s:to_set = a:1
+    else
+        let s:to_set = 0
+    endif
+    if &colorcolumn && !s:to_set
         let &colorcolumn=0
     else
         let s:margin=join(range(&textwidth+1, &columns+1), ",")
@@ -127,18 +132,19 @@ endfunction
 "" End function definitions
 
 "" Mark the limit of <text-width>
-nnoremap <leader>j :call SetPageLimit()<CR>
+nnoremap <leader>j :call TogglePageLimit()<CR>
 nnoremap <leader>p :call TogglePasteMode()<CR>
 nnoremap ;t :call SearchDevTags()<CR>
 
 set statusline=%!SetCustomStatusLine('')
 map <F2> :call ToggleLangCheck()<CR>
 
+
 "" autocmd`s for python only
 augroup Python
     autocmd!
     autocmd FileType python set textwidth=79
-    autocmd FileType python call SetPageLimit()
+    autocmd FileType python call TogglePageLimit(1)
     "" Shortcut for commenting out lines in python files
     autocmd FileType python nnoremap <buffer> <localleader>c I#<esc>
     "" Remove trailing white spaces on saving *.py files
