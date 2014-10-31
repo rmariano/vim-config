@@ -129,6 +129,11 @@ function! ToggleLangCheck()
     endif
     return &spell
 endfunction
+
+function! FormatXML()
+    echom "Formatting XML file"
+    execute ":silent %!xmllint --format --recover - 2>/dev/null"
+endfunction
 "" End function definitions
 
 "" Mark the limit of <text-width>
@@ -150,3 +155,5 @@ augroup Python
     "" Remove trailing white spaces on saving *.py files
     autocmd BufWritePre *.py :%s/\s\+$//e
 augroup END
+"" autocmd`s for other file types
+autocmd FileType xml map <F3> :call FormatXML()<CR>
