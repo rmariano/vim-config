@@ -84,12 +84,8 @@ although pull requests are accepted.
 
 
 # Other plug-ins I use
-I prefer to keep the `.vimrc` configuration as simple as possible, so I would
-like not to have to install plug-ins. That said, some are needed, which are:
-
- * PEP8.vim (looking for a better alternative), for running a PEP-8 check by
-   pressing `<F5>`.
- * Pyflakes: for detecting syntax errors/issues in the code.
+I prefer to keep the `.vimrc` configuration as simple as possible, however the
+only exception so far is ``flake8``.
 
 ------
 
