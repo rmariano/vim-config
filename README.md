@@ -1,4 +1,5 @@
-#Vim Configuration
+# Vim Configuration
+-------------------
 
 [![License](http://img.shields.io/license/MIT.png?color=green)](http://opensource.org/licenses/MIT)
 
@@ -10,16 +11,18 @@ a particular configuration for improved productivity.
 The goal is to develop a good configuration for the Vim editor, tailored
 for Python development.
 
-#Installation
+# Installation
 
-##Instant
+## Instant
+
 Copy and paste the following command in your terminal:
 
 ```bash
 	$wget -O /tmp/deploy.sh https://raw.github.com/rmariano/vim-config/master/deploy.sh && sh /tmp/deploy.sh
 ```
 
-##Automatic
+## Automatic
+
 Use the included [deploy.sh](deploy.sh) script which downloads and replaces the files on
 their latest versions. Bear in mind that it requires ``wget`` which comes
 installed in most of the distributions.
@@ -36,7 +39,7 @@ Or
 ```
 
 
-##Manual Installation
+## Manual Installation
 
 For setting this configuration, you should copy the configuration files to
 the Vim directory, or create symlinks if you want to update the configuration
