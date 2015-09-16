@@ -51,6 +51,8 @@ augroup END
 set laststatus=2  ""Always display the status bar
 
 nnoremap <leader>nh :nohlsearch<CR>
+"" Save as sudo
+cnoremap w!! w !sudo tee % >/dev/null
 
 "" Custom mappings for quick-fix window
 nnoremap <leader>n :cnext<cr>
