@@ -38,6 +38,7 @@ set wrap
 set cursorline
 set wildignore=*.pyc
 set showmode
+set autoread
 
 "" look for trailing white spaces
 nnoremap <leader>tw /\s\+$<CR>
