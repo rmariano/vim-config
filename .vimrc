@@ -160,3 +160,4 @@ augroup Python
 augroup END
 "" autocmd`s for other file types
 autocmd FileType xml map <F3> :call FormatXML()<CR>
+autocmd BufNewFile,BufRead Dockerfile set ft=Dockerfile
