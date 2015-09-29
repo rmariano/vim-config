@@ -147,6 +147,7 @@ nnoremap ;t :call SearchDevTags()<CR>
 set statusline=%!SetCustomStatusLine('')
 map <F2> :call ToggleLangCheck()<CR>
 
+nnoremap <leader>e :set number!<CR>
 
 "" autocmd`s for python only
 augroup Python
