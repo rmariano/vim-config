@@ -1,0 +1,10 @@
+Changelog
+
+v0.2
+	* Do not enable the page limit bar by default.
+	* Toggle number with <leader>e
+	* Add support (syntax highlighting) for Dockerfile.
+	* set autoread
+	* Adding option to save files with sudo: `:w!!`
+	* Extendeded color configuration for python.
+

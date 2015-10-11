@@ -38,6 +38,7 @@ set wrap
 set cursorline
 set wildignore=*.pyc
 set showmode
+set autoread
 
 "" look for trailing white spaces
 nnoremap <leader>tw /\s\+$<CR>
@@ -51,6 +52,8 @@ augroup END
 set laststatus=2  ""Always display the status bar
 
 nnoremap <leader>nh :nohlsearch<CR>
+"" Save as sudo
+cnoremap w!! w !sudo tee % >/dev/null
 
 "" Custom mappings for quick-fix window
 nnoremap <leader>n :cnext<cr>
@@ -144,12 +147,12 @@ nnoremap ;t :call SearchDevTags()<CR>
 set statusline=%!SetCustomStatusLine('')
 map <F2> :call ToggleLangCheck()<CR>
 
+nnoremap <leader>e :set number!<CR>
 
 "" autocmd`s for python only
 augroup Python
     autocmd!
     autocmd FileType python set textwidth=79
-    autocmd FileType python call TogglePageLimit(1)
     "" Shortcut for commenting out lines in python files
     autocmd FileType python nnoremap <buffer> <localleader>c I#<esc>
     "" Remove trailing white spaces on saving *.py files
@@ -157,3 +160,4 @@ augroup Python
 augroup END
 "" autocmd`s for other file types
 autocmd FileType xml map <F3> :call FormatXML()<CR>
+autocmd BufNewFile,BufRead Dockerfile set ft=Dockerfile

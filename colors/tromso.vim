@@ -2,6 +2,7 @@
 " Maintainer: Mariano Anaya
 " Last Change:
 " Created: 11 Jan 2014
+""""""""""""""""""""""""""""
 
 set bg=dark
 hi clear
