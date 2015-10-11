@@ -69,6 +69,7 @@ support for ``Gvim`` or graphical versions is included for the colour scheme
 although pull requests are accepted.
 
 # Features
+
  * Mapping `<tab>` to `<Esc>` for faster access.
  * PEP-8 general rules of text: automatically handling spaces instead of tabs,
    proper indentation, wrap text to 79 columns, margin set at col 80
@@ -84,9 +85,13 @@ although pull requests are accepted.
    rendering the results in a quick fix window. Warning: searches recursively.
  * `<leader>n`, `<leader>p` for moving to the next and previous entries in the
    quick-fix window, respectively. `<leader>q` for closing it.
+ * `<leader>e` to toggle line numbers (enabled by default).
+ * Syntax highlighting for Docker files.
+ * Can save files with `sudo` that were opened with less permissions: `:w!!` to `sudo` save the file.
 
 
 # Other plug-ins I use
+
 I prefer to keep the `.vimrc` configuration as simple as possible, however the
 only exception so far is ``flake8``.
 

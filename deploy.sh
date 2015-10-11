@@ -1,6 +1,6 @@
 #!/bin/bash
 
-BRANCH="v0.2-develop"
+BRANCH="develop"
 REPO_URL="https://raw.github.com/rmariano/vim-config"
 
 COLORS_DIR="$HOME/.vim/colors"
