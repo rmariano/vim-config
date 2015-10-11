@@ -153,7 +153,6 @@ nnoremap <leader>e :set number!<CR>
 augroup Python
     autocmd!
     autocmd FileType python set textwidth=79
-    autocmd FileType python call TogglePageLimit(1)
     "" Shortcut for commenting out lines in python files
     autocmd FileType python nnoremap <buffer> <localleader>c I#<esc>
     "" Remove trailing white spaces on saving *.py files
