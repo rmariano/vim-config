@@ -40,6 +40,9 @@ set wildignore=*.pyc
 set showmode
 set autoread
 
+set splitright
+set splitbelow
+
 "" look for trailing white spaces
 nnoremap <leader>tw /\s\+$<CR>
 nnoremap <leader>w :%s/\s\+$//g<CR>
@@ -59,6 +62,11 @@ cnoremap w!! w !sudo tee % >/dev/null
 nnoremap <leader>n :cnext<cr>
 nnoremap <leader>b :cprevious<cr>
 nnoremap <leader>q :cclose<cr>
+
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-H> <C-W><C-H>
+nnoremap <C-L> <C-W><C-L>
 
 "" Function definitions
 function! SearchDevTags()
