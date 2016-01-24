@@ -55,6 +55,10 @@ set ttyfast
 "" Do not ring errors
 set noerrorbells
 set novisualbell
+
+set autoindent
+set smartindent
+
 "" look for trailing white spaces
 nnoremap <leader>tw /\s\+$<CR>
 nnoremap <leader>w :%s/\s\+$//g<CR>
