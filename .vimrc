@@ -1,4 +1,4 @@
-"" Vim configurations
+"" Vim configuration
 " Maintainer: Mariano Anaya
 " Last Change:
 " Created: 01 Jan 2014
@@ -39,6 +39,7 @@ set cursorline
 set wildignore=*.pyc
 set showmode
 set autoread
+set hidden
 
 set splitright
 set splitbelow
