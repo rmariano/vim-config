@@ -52,6 +52,9 @@ set scrolloff=10
 set lazyredraw
 set ttyfast
 
+"" Do not ring errors
+set noerrorbells
+set novisualbell
 "" look for trailing white spaces
 nnoremap <leader>tw /\s\+$<CR>
 nnoremap <leader>w :%s/\s\+$//g<CR>
