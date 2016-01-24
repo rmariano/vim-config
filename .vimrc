@@ -47,6 +47,11 @@ set splitbelow
 
 "" Lines range visible when scrolling
 set scrolloff=10
+
+"" Performance improvements
+set lazyredraw
+set ttyfast
+
 "" look for trailing white spaces
 nnoremap <leader>tw /\s\+$<CR>
 nnoremap <leader>w :%s/\s\+$//g<CR>
