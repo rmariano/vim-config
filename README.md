@@ -68,6 +68,16 @@ In addition, just the command-line classic Vim version is supported, so no
 support for ``Gvim`` or graphical versions is included for the colour scheme
 although pull requests are accepted.
 
+## Captures
+
+Here are some examples of how the colour scheme looks like:
+![Vim capture 1](http://rmariano.github.io/itarch/vim-capture1.png)
+
+Please note this might depend on the configuration of your terminal as well.
+
+![Vim capture 2](http://rmariano.github.io/itarch/vim-capture2.png)
+
+
 # Features
 
  * Mapping `<tab>` to `<Esc>` for faster access.
