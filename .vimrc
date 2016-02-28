@@ -1,4 +1,4 @@
-"" Vim configurations
+"" Vim configuration
 " Maintainer: Mariano Anaya
 " Last Change:
 " Created: 01 Jan 2014
@@ -39,6 +39,25 @@ set cursorline
 set wildignore=*.pyc
 set showmode
 set autoread
+set hidden
+
+"" Where to open new windows
+set splitright
+set splitbelow
+
+"" Lines range visible when scrolling
+set scrolloff=10
+
+"" Performance improvements
+set lazyredraw
+set ttyfast
+
+"" Do not ring errors
+set noerrorbells
+set novisualbell
+
+set autoindent
+set smartindent
 
 "" look for trailing white spaces
 nnoremap <leader>tw /\s\+$<CR>
@@ -59,6 +78,17 @@ cnoremap w!! w !sudo tee % >/dev/null
 nnoremap <leader>n :cnext<cr>
 nnoremap <leader>b :cprevious<cr>
 nnoremap <leader>q :cclose<cr>
+
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-H> <C-W><C-H>
+nnoremap <C-L> <C-W><C-L>
+
+"" Tabs
+nnoremap <leader>tn :tabnew<CR>
+nnoremap <leader>to :tabonly<CR>
+nnoremap <leader>tc :tabclose<CR>
+nnoremap <leader>tm :tabmove<CR>
 
 "" Function definitions
 function! SearchDevTags()
@@ -152,7 +182,7 @@ nnoremap <leader>e :set number!<CR>
 "" autocmd`s for python only
 augroup Python
     autocmd!
-    autocmd FileType python set textwidth=79
+    autocmd FileType python set textwidth=99
     "" Shortcut for commenting out lines in python files
     autocmd FileType python nnoremap <buffer> <localleader>c I#<esc>
     "" Remove trailing white spaces on saving *.py files

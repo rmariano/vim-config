@@ -68,12 +68,22 @@ In addition, just the command-line classic Vim version is supported, so no
 support for ``Gvim`` or graphical versions is included for the colour scheme
 although pull requests are accepted.
 
+## Captures
+
+Here are some examples of how the colour scheme looks like:
+![Vim capture 1](http://rmariano.github.io/itarch/vim-capture1.png)
+
+Please note this might depend on the configuration of your terminal as well.
+
+![Vim capture 2](http://rmariano.github.io/itarch/vim-capture2.png)
+
+
 # Features
 
  * Mapping `<tab>` to `<Esc>` for faster access.
  * PEP-8 general rules of text: automatically handling spaces instead of tabs,
-   proper indentation, wrap text to 79 columns, margin set at col 80
-   (toggle-able), etc.
+   proper indentation, wrap text to 79 columns, margin set at col 99 (toggle-able), etc.
+   * autoindent & smartindent
  * `<F2>` for toggling spell check.
  * ``<leader>`` +  ``nh`` as a shortcut for ``:nohlsearch``
  * `<leader>` + `p` is mapped to toggle paste mode, with the label indicating
@@ -88,7 +98,22 @@ although pull requests are accepted.
  * `<leader>e` to toggle line numbers (enabled by default).
  * Syntax highlighting for Docker files.
  * Can save files with `sudo` that were opened with less permissions: `:w!!` to `sudo` save the file.
+ * Mappings for managing tabs
+    * `<leader>tn`:  tabnew
+    * `<leader>to`:  tabonly (close all tabs but this)
+    * `<leader>tc`:  tabclose
+    * `<leader>tm`:  tabmove
 
+* Window Splits properly configured
+	* New vertical splits, to the right
+	* New horizontal splits, below.
+	* `<C-j>` for moving between splits (instead of `<C-W><C-j>`). Same for `h`, `k`, or `l` respectively.
+
+* Other features
+    * scrolloff=10
+    * Performance improvements
+    * Silent bells
+    * Set hidden buffers
 
 # Other plug-ins I use
 

@@ -1,5 +1,15 @@
 Changelog
 
+v0.3
+	* Set text width to 99, for Python files.
+	* Add mappings for managing tabs
+	* set autoindent & set smartindent
+	* silent error sounds.
+	* Performance improvements
+	* set scrolloff=10
+	* set hidden
+	* Configure splits
+
 v0.2
 	* Do not enable the page limit bar by default.
 	* Toggle number with <leader>e
@@ -7,4 +17,3 @@ v0.2
 	* set autoread
 	* Adding option to save files with sudo: `:w!!`
 	* Extendeded color configuration for python.
-
