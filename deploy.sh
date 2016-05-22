@@ -1,4 +1,5 @@
 #!/bin/bash
+set -e
 
 BRANCH="master"
 REPO_URL="https://raw.github.com/rmariano/vim-config"
