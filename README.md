@@ -18,7 +18,7 @@ for Python development.
 Copy and paste the following command in your terminal:
 
 ```bash
-	$wget -O /tmp/deploy.sh https://raw.github.com/rmariano/vim-config/master/deploy.sh && sh /tmp/deploy.sh
+	wget -O /tmp/deploy.sh https://raw.github.com/rmariano/vim-config/master/deploy.sh && /usr/bin/bash /tmp/deploy.sh
 ```
 
 ## Automatic
