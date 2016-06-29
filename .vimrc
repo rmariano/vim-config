@@ -51,6 +51,7 @@ set scrolloff=10
 "" Performance improvements
 set lazyredraw
 set ttyfast
+set synmaxcol=120
 
 "" Do not ring errors
 set noerrorbells
