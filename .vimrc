@@ -145,15 +145,6 @@ function! SetCustomStatusLine(alert_msg)
     return st_txt
 endfunction
 
-function! TogglePasteMode()
-    set paste!
-    if &paste
-        set statusline=%!SetCustomStatusLine('[PASTE]')
-    else
-        set statusline=%!SetCustomStatusLine('')
-    endif
-    return &paste
-endfunction
 
 function! ToggleLangCheck()
     if !&spell
@@ -172,11 +163,11 @@ endfunction
 
 "" Mark the limit of <text-width>
 nnoremap <leader>j :call TogglePageLimit()<CR>
-nnoremap <leader>p :call TogglePasteMode()<CR>
 nnoremap ;t :call SearchDevTags()<CR>
 
 set statusline=%!SetCustomStatusLine('')
 map <F2> :call ToggleLangCheck()<CR>
+set pastetoggle=<F4>
 
 nnoremap <leader>e :set number!<CR>
 
