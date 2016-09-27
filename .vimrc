@@ -185,7 +185,7 @@ augroup Python
     autocmd!
     autocmd FileType python set textwidth=99
     "" Shortcut for commenting out lines in python files
-    autocmd FileType python nnoremap <buffer> <localleader>c I#<esc>
+    autocmd FileType python nnoremap <buffer> <localleader>c I# <ESC>
     "" Remove trailing white spaces on saving *.py files
     autocmd BufWritePre *.py :%s/\s\+$//e
 augroup END
