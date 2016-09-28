@@ -64,11 +64,6 @@ set smartindent
 nnoremap <leader>tw /\s\+$<CR>
 nnoremap <leader>w :%s/\s\+$//g<CR>
 
-augroup filetype_markdown
-    autocmd!
-    autocmd BufNew,BufNewFile,BufRead *.md setlocal filetype=markdown
-augroup END
-
 set laststatus=2  ""Always display the status bar
 
 nnoremap <leader>nh :nohlsearch<CR>
