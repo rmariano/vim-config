@@ -1,23 +1,14 @@
 #!/bin/bash
 set -e
+echo """
+#####################################################
+#### DEPRECATED
+#### Left only for backwards-compatibility purposes
+#### Use Makefile instead as
 
-BRANCH="master"
-REPO_URL="https://raw.github.com/rmariano/vim-config"
+        make install
+#####################################################
+"""
 
-COLORS_DIR="$HOME/.vim/colors"
-SYNTAX_DIR="$HOME/.vim/syntax"
-
-echo "Installing $BRANCH . Getting the latest version from $REPO_URL"
-for dr in $COLORS_DIR $SYNTAX_DIR; do
-    if [[ ! -d $dr ]]; then
-        mkdir -p $dr
-    fi
-done
-unset dr;
-
-wget -O $HOME/.vimrc $REPO_URL/$BRANCH/.vimrc
-wget -O $COLORS_DIR/tromso.vim $REPO_URL/$BRANCH/colors/tromso.vim
-wget -O $SYNTAX_DIR/python.vim $REPO_URL/$BRANCH/syntax/python.vim
-wget -O $SYNTAX_DIR/Dockerfile.vim $REPO_URL/$BRANCH/syntax/Dockerfile.vim
-
+make install
 echo "Done";
