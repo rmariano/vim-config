@@ -1,6 +1,9 @@
+COLORS_DIR := $(HOME)/.vim/colors
+SYNTAX_DIR := $(HOME)/.vim/syntax
+
 DIRS = \
-	   $(HOME)/.vim/colors \
-	   $(HOME)/.vim/syntax \
+	   $(COLORS_DIR) \
+	   $(SYNTAX_DIR) \
 	   $(HOME)/.vim/autoload \
 	   $(HOME)/.vim/plugin \
 	   $(HOME)/.vim/ftplugin
@@ -18,8 +21,8 @@ dev-deploy:
 		echo -e "\tLinking $$file -> $$target"; \
 		ln -sfn $$file $$target; \
 	done
-	ln -sfn $(PWD)/colors/tromso.vim $(HOME)/.vim/colors/tromso.vim
-	ln -sfn $(PWD)/syntax/python.vim $(HOME)/.vim/syntax/python.vim
+	ln -sfn $(PWD)/colors/tromso.vim $(COLORS_DIR)/tromso.vim
+	ln -sfn $(PWD)/syntax/python.vim $(SYNTAX_DIR)/python.vim
 
 dirs:
 	@mkdir -p $(DIRS)
@@ -38,7 +41,7 @@ extras: flake8 fugitive
 
 # make install BRANCH=<branch>
 install: dirs
-	@echo $(REMOTELOC)
+	echo "Getting files from $(REMOTELOC)"
 	@wget -O $(HOME)/.vimrc $(REMOTELOC)/.vimrc
 	@wget -O $(COLORS_DIR)/tromso.vim $(REMOTELOC)/colors/tromso.vim
 	@wget -O $(SYNTAX_DIR)/python.vim $(REMOTELOC)/syntax/python.vim
