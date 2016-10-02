@@ -28,13 +28,13 @@ their latest versions. Bear in mind that requires ``wget`` and ``Makefile`` whic
 installed in most of the distributions.
 
 ```bash
-    $sh deploy.sh
+    make install
 ```
 
 Or, if you want to install a particular version (tag or branch).
 
 ```bash
-    $ make install BRANCH=<tag_or_branch>
+    make install BRANCH=<tag_or_branch>
 ```
 
 Note: this is supported from version >=0.4.
@@ -111,6 +111,7 @@ and use the development deployment, which creates symlinks of the files in this 
  * `<leader>e` to toggle line numbers (enabled by default).
  * Can save files with `sudo` that were opened with less permissions: `:w!!` to `sudo` save the file.
  * Mappings for managing tabs
+
     * `<leader>tn`:  tabnew
     * `<leader>to`:  tabonly (close all tabs but this)
     * `<leader>tc`:  tabclose
