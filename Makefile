@@ -28,11 +28,12 @@ dirs:
 	@mkdir -p $(DIRS)
 
 flake8:
+	$(eval WHEREFLAKE8 := $(shell echo "https://raw.githubusercontent.com/nvie/vim-flake8/master"))
 	@echo "Installing flake8..."
 	@pip install --user flake8
-	@echo "Downloading Vim flake8.."
-	@wget https://raw.githubusercontent.com/nvie/vim-flake8/master/autoload/flake8.vim --directory-prefix=$(HOME)/.vim/autoload/
-    @wget https://raw.githubusercontent.com/nvie/vim-flake8/master/ftplugin/python_flake8.vim --directory-prefix=$(HOME)/.vim/ftplugin/
+	@echo "Downloading Vim flake8 from $(WHEREFLAKE8)"
+	@wget -N $(WHEREFLAKE8)/autoload/flake8.vim --directory-prefix=$(HOME)/.vim/autoload/
+	@wget -N $(WHEREFLAKE8)/ftplugin/python_flake8.vim --directory-prefix=$(HOME)/.vim/ftplugin/
 
 fugitive: dirs
 	@wget https://raw.githubusercontent.com/tpope/vim-fugitive/master/plugin/fugitive.vim --directory-prefix=$(HOME)/.vim/plugin/
