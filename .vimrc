@@ -144,8 +144,10 @@ endfunction
 function! ToggleLangCheck()
     if !&spell
         setlocal spell spelllang=en_gb
+        set statusline=%!SetCustomStatusLine('[spell]')
     else
         setlocal nospell
+        set statusline=%!SetCustomStatusLine('')
     endif
     return &spell
 endfunction
