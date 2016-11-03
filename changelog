@@ -1,5 +1,21 @@
 Changelog
 
+v0.4
+	* Inform in the status bar when spell=on
+	* Remove deploy.sh from README
+	* Updated documentation
+	* Improvements in flake8 target
+	* Correct Makefile install target
+	* Replace the `deploy.sh` bash script for a Makefile
+	* Remove custom support for markdown filetype
+	* Replace custom toggle paste function
+	* On Python, single line comment, leaves space
+	* Drop custom Dockerfile support
+	* set synmaxcol=120
+	* Set strict mode in deployment script.
+	* README.md: Correct installation one-liner
+	* deploy.sh: Change default branch to master
+
 v0.3
 	* Set text width to 99, for Python files.
 	* Add mappings for managing tabs

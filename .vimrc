@@ -64,11 +64,6 @@ set smartindent
 nnoremap <leader>tw /\s\+$<CR>
 nnoremap <leader>w :%s/\s\+$//g<CR>
 
-augroup filetype_markdown
-    autocmd!
-    autocmd BufNew,BufNewFile,BufRead *.md setlocal filetype=markdown
-augroup END
-
 set laststatus=2  ""Always display the status bar
 
 nnoremap <leader>nh :nohlsearch<CR>
@@ -145,21 +140,14 @@ function! SetCustomStatusLine(alert_msg)
     return st_txt
 endfunction
 
-function! TogglePasteMode()
-    set paste!
-    if &paste
-        set statusline=%!SetCustomStatusLine('[PASTE]')
-    else
-        set statusline=%!SetCustomStatusLine('')
-    endif
-    return &paste
-endfunction
 
 function! ToggleLangCheck()
     if !&spell
         setlocal spell spelllang=en_gb
+        set statusline=%!SetCustomStatusLine('[spell]')
     else
         setlocal nospell
+        set statusline=%!SetCustomStatusLine('')
     endif
     return &spell
 endfunction
@@ -172,11 +160,11 @@ endfunction
 
 "" Mark the limit of <text-width>
 nnoremap <leader>j :call TogglePageLimit()<CR>
-nnoremap <leader>p :call TogglePasteMode()<CR>
 nnoremap ;t :call SearchDevTags()<CR>
 
 set statusline=%!SetCustomStatusLine('')
 map <F2> :call ToggleLangCheck()<CR>
+set pastetoggle=<F4>
 
 nnoremap <leader>e :set number!<CR>
 
@@ -185,10 +173,9 @@ augroup Python
     autocmd!
     autocmd FileType python set textwidth=99
     "" Shortcut for commenting out lines in python files
-    autocmd FileType python nnoremap <buffer> <localleader>c I#<esc>
+    autocmd FileType python nnoremap <buffer> <localleader>c I# <ESC>
     "" Remove trailing white spaces on saving *.py files
     autocmd BufWritePre *.py :%s/\s\+$//e
 augroup END
 "" autocmd`s for other file types
 autocmd FileType xml map <F3> :call FormatXML()<CR>
-autocmd BufNewFile,BufRead Dockerfile set ft=Dockerfile

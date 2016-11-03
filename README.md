@@ -18,26 +18,26 @@ for Python development.
 Copy and paste the following command in your terminal:
 
 ```bash
-	wget -O /tmp/deploy.sh https://raw.github.com/rmariano/vim-config/master/deploy.sh && /usr/bin/bash /tmp/deploy.sh
+	wget -O /tmp/Makefile -N https://raw.github.com/rmariano/vim-config/master/Makefile && cd /tmp && make && cd -
 ```
 
 ## Automatic
 
-Use the included [deploy.sh](deploy.sh) script which downloads and replaces the files on
-their latest versions. Bear in mind that it requires ``wget`` which comes
+Use the included [Makefile](Makefile) script which downloads and replaces the files on
+their latest versions. Bear in mind that requires ``wget`` and ``Makefile`` which comes
 installed in most of the distributions.
 
 ```bash
-    $sh deploy.sh
+    make install
 ```
 
-Or
+Or, if you want to install a particular version (tag or branch).
 
 ```bash
-    $chmod +x deploy.sh
-    $./deploy.sh
+    make install BRANCH=<tag_or_branch>
 ```
 
+Note: this is supported from version >=0.4.
 
 ## Manual Installation
 
@@ -77,14 +77,27 @@ Please note this might depend on the configuration of your terminal as well.
 
 ![Vim capture 2](http://rmariano.github.io/itarch/vim-capture2.png)
 
+## Development
+
+If you want to try the project, and tweak the settings, I would recommend to clone the repository,
+and use the development deployment, which creates symlinks of the files in this project, like:
+
+    make dev-deploy
+
 
 # Features
 
  * Mapping `<tab>` to `<Esc>` for faster access.
  * PEP-8 general rules of text: automatically handling spaces instead of tabs,
    proper indentation, wrap text to 79 columns, margin set at col 99 (toggle-able), etc.
+
    * autoindent & smartindent
- * `<F2>` for toggling spell check.
+
+ * Function keys
+    * `<F2>`: toggle spell check.
+    * `<F3>`: auto indent/format files (currently only XML support).
+    * `<F4>`: toggle paste mode
+
  * ``<leader>`` +  ``nh`` as a shortcut for ``:nohlsearch``
  * `<leader>` + `p` is mapped to toggle paste mode, with the label indicating
    in the status bar if is active or not.
@@ -96,9 +109,9 @@ Please note this might depend on the configuration of your terminal as well.
  * `<leader>n`, `<leader>p` for moving to the next and previous entries in the
    quick-fix window, respectively. `<leader>q` for closing it.
  * `<leader>e` to toggle line numbers (enabled by default).
- * Syntax highlighting for Docker files.
  * Can save files with `sudo` that were opened with less permissions: `:w!!` to `sudo` save the file.
  * Mappings for managing tabs
+
     * `<leader>tn`:  tabnew
     * `<leader>to`:  tabonly (close all tabs but this)
     * `<leader>tc`:  tabclose
@@ -117,8 +130,14 @@ Please note this might depend on the configuration of your terminal as well.
 
 # Other plug-ins I use
 
-I prefer to keep the `.vimrc` configuration as simple as possible, however the
-only exception so far is ``flake8``.
+I prefer to keep the `.vimrc` configuration as simple as possible, so this project is a collection of settings,
+configurations, and helpers. That maintains the Vim installation as general as possible.
+
+However, on a daily basis, we might want some extra, few plugins. Some exceptions could be ``flake8``, ``fugitive``, etc.
+
+They can be installed with:
+
+    make extras
 
 ------
 
