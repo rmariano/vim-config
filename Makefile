@@ -1,12 +1,15 @@
 COLORS_DIR := $(HOME)/.vim/colors
 SYNTAX_DIR := $(HOME)/.vim/syntax
+PACKAGES_DIR := $(HOME)/.vim/pack/lplugins/start
 
 DIRS = \
 	   $(COLORS_DIR) \
 	   $(SYNTAX_DIR) \
 	   $(HOME)/.vim/autoload \
 	   $(HOME)/.vim/plugin \
-	   $(HOME)/.vim/ftplugin
+	   $(HOME)/.vim/ftplugin \
+	   $(PACKAGES_DIR)
+
 BRANCH := master
 REPO_URL := https://raw.github.com/rmariano/vim-config
 REMOTELOC := $(REPO_URL)/$(BRANCH)
@@ -38,7 +41,18 @@ flake8:
 fugitive: dirs
 	@wget https://raw.githubusercontent.com/tpope/vim-fugitive/master/plugin/fugitive.vim --directory-prefix=$(HOME)/.vim/plugin/
 
-extras: flake8 fugitive
+nerdtree: dirs
+	make install_external \
+		EURL=https://github.com/scrooloose/nerdtree/archive/5.0.0.tar.gz \
+		PNAME=nerdtree
+
+# use: make install_external EURL=<external_url> PNAME=<package_name>
+install_external:
+	@wget $(EURL) -O $(PACKAGES_DIR)/$(PNAME).tar.gz
+	@tar -xzf $(PACKAGES_DIR)/$(PNAME).tar.gz -C $(PACKAGES_DIR)
+	@rm $(PACKAGES_DIR)/$(PNAME).tar.gz
+
+extras: flake8 fugitive nerdtree
 
 # make install BRANCH=<branch>
 install: dirs
