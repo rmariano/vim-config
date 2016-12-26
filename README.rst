@@ -39,7 +39,7 @@ Or, if you want to install a particular version (tag or branch).
 
     make install BRANCH=<tag_or_branch>
 
-Note: this is supported from version ``>=0.4``.
+Note: this is supported from version ``>=v0.4``.
 
 Manual Installation
 -------------------
@@ -107,52 +107,53 @@ symlinks of the files in this project, like:
 Features
 --------
 
- * Mapping double ``<tab>`` to ``<Esc`` for faster access.
- * `PEP-8 <https://www.python.org/dev/peps/pep-0008/>`_ general rules of text:
-   automatically handling spaces instead of tabs, proper indentation, wrap text
-   to 79 columns, margin set (toggle-able), etc.
+* Mapping double ``<tab>`` to ``<Esc`` for faster access.
 
-   * ``autoindent`` & ``smartindent``.
+* `PEP-8 <https://www.python.org/dev/peps/pep-0008/>`_ general rules of text:
+  automatically handling spaces instead of tabs, proper indentation, wrap text
+  to 79 columns, margin set (toggle-able), etc.
 
- * Function keys
+* ``autoindent`` & ``smartindent``.
+
+* Function keys
 
     * ``<F2>``: toggle spell check.
     * ``<F3>``: auto indent/format files (currently only XML support).
     * ``<F4>``: toggle paste mode
 
- * ``<leader>`` +  ``nh`` as a shortcut for ``:nohlsearch``
- * ``<leader>`` + ``p`` is mapped to toggle paste mode, with the label indicating
-   in the status bar if is active or not.
+* ``<leader>`` +  ``nh`` as a shortcut for ``:nohlsearch``
+* ``<leader>`` + ``p`` is mapped to toggle paste mode, with the label
+  indicating in the status bar if is active or not.
 
- * A colour scheme I like.
+* A colour scheme I like.
 
- * A status line with useful information (file name with path, modification
-   flag, file type, column, lines, and position (in %).
+* A status line with useful information (file name with path, modification
+  flag, file type, column, lines, and position (in %).
 
- * ``;t`` available for searching development tags, such as ``TODO`` or
-   ``FIXME``, rendering the results in a quick fix window. Warning: searches
-   recursively.
+* ``;t`` available for searching development tags, such as ``TODO`` or
+  ``FIXME``, rendering the results in a quick fix window. Warning: searches
+  recursively.
 
- * ``<leader>`` + ``n``, ``<leader>`` + ``p`` for moving to the next and
-   previous entries in the quick-fix window, respectively. ``<leader>`` + ``q``
-   for closing it.
+* ``<leader>`` + ``n``, ``<leader>`` + ``p`` for moving to the next and
+  previous entries in the quick-fix window, respectively. ``<leader>`` + ``q``
+  for closing it.
 
- * ``<leader>`` + ``e`` to toggle line numbers (enabled by default).
+* ``<leader>`` + ``e`` to toggle line numbers (enabled by default).
 
- * Can save files with ``sudo`` that were opened with less permissions:
-   ``:w!!`` to ``sudo`` save the file.
+* Can save files with ``sudo`` that were opened with less permissions: ``:w!!``
+  to ``sudo`` save the file.
 
- * Mappings for managing tabs
+* Mappings for managing tabs
 
     * ``<leader>`` + ``tn``:  tabnew
-    * ``<leader>to``:  tabonly (close all tabs but this)
-    * ``<leader>tc``:  tabclose
-    * ``<leader>tm``:  tabmove
+    * ``<leader>`` + ``to``:  tabonly (close all tabs but this)
+    * ``<leader>`` + ``tc``:  tabclose
+    * ``<leader>`` + ``tm``:  tabmove
 
 * Window Splits properly configured
 
-	* New vertical splits, to the right
-	* New horizontal splits, below.
+    * New vertical splits, to the right
+    * New horizontal splits, below.
 
     * ``<C-j>``: for moving between splits (instead of ``<C-W><C-j>``).
       Same for ``h``, ``k``, or ``l`` respectively.
@@ -177,8 +178,9 @@ exceptions could be ``flake8``, ``fugitive``, etc.
 
 They can be installed with:
 
+.. code:: bash
+
     make extras
 
-------
 
 Enjoy!
