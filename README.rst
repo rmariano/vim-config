@@ -79,16 +79,16 @@ Here are some examples of how the colour scheme looks like.
 
 .. image:: https://rmariano.github.io/itarch/vim-capture1.png
    :target:: https://rmariano.github.io/itarch/vim-capture1.png
-   :height: 128px
-   :width: 128px
+   :width: 883px
+   :height: 391px
    :alt: Vim capture 1
 
 Please note this might depend on the configuration of your terminal as well.
 
 .. image:: https://rmariano.github.io/itarch/vim-capture2.png
    :target: https://rmariano.github.io/itarch/vim-capture2.png
-   :height: 128px
-   :width: 128px
+   :width: 574px
+   :height: 596px
    :alt: Vim capture 2
 
 
