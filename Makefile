@@ -16,6 +16,7 @@ REMOTELOC := $(REPO_URL)/$(BRANCH)
 
 all: install
 
+.PHONY: dev-deploy
 dev-deploy:
 	@echo "Symlinking files..."
 	@for file in $(shell find $(CURDIR) -name ".*" -not -name ".gitignore" -not -name ".git" -not -name ".*.swp"); do \
@@ -60,18 +61,18 @@ install_external: dirs
 extras: flake8 fugitive nerdtree
 
 # make install BRANCH=<branch>
+.PHONY: install
 install: dirs
 	echo "Getting files from $(REMOTELOC)"
 	@wget -O $(HOME)/.vimrc $(REMOTELOC)/.vimrc
 	@wget -O $(COLORS_DIR)/tromso.vim $(REMOTELOC)/colors/tromso.vim
 	@wget -O $(SYNTAX_DIR)/python.vim $(REMOTELOC)/syntax/python.vim
 
+.PHONY: changelog
 changelog:
 	@git log master.. --oneline --pretty=format:"   * %s"
 
 # make release TAG=<tag>
+.PHONY: release
 release:
 	git tag -a $(TAG) -m "Vim config $(TAG)"
-
-
-.PHONY: changelog release dirs
