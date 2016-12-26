@@ -27,31 +27,36 @@ dev-deploy:
 	ln -sfn $(PWD)/colors/tromso.vim $(COLORS_DIR)/tromso.vim
 	ln -sfn $(PWD)/syntax/python.vim $(SYNTAX_DIR)/python.vim
 
+.PHONY: dirs
 dirs:
 	@mkdir -p $(DIRS)
 
+.PHONY: flake8
 flake8:
-	$(eval WHEREFLAKE8 := $(shell echo "https://raw.githubusercontent.com/nvie/vim-flake8/master"))
-	@echo "Installing flake8..."
-	@pip install --user flake8
-	@echo "Downloading Vim flake8 from $(WHEREFLAKE8)"
-	@wget -N $(WHEREFLAKE8)/autoload/flake8.vim --directory-prefix=$(HOME)/.vim/autoload/
-	@wget -N $(WHEREFLAKE8)/ftplugin/python_flake8.vim --directory-prefix=$(HOME)/.vim/ftplugin/
+	make install_external \
+		EURL=https://github.com/nvie/vim-flake8/archive/1.6.tar.gz \
+		PNAME=flake8
 
-fugitive: dirs
-	@wget https://raw.githubusercontent.com/tpope/vim-fugitive/master/plugin/fugitive.vim --directory-prefix=$(HOME)/.vim/plugin/
+.PHONY: fugitive
+fugitive:
+	make install_external \
+		EURL=https://github.com/tpope/vim-fugitive/archive/v2.2.tar.gz \
+		PNAME=fugitive
 
-nerdtree: dirs
+.PHONY: nerdtree
+nerdtree:
 	make install_external \
 		EURL=https://github.com/scrooloose/nerdtree/archive/5.0.0.tar.gz \
 		PNAME=nerdtree
 
 # use: make install_external EURL=<external_url> PNAME=<package_name>
-install_external:
+.PHONY: install_external
+install_external: dirs
 	@wget $(EURL) -O $(PACKAGES_DIR)/$(PNAME).tar.gz
 	@tar -xzf $(PACKAGES_DIR)/$(PNAME).tar.gz -C $(PACKAGES_DIR)
 	@rm $(PACKAGES_DIR)/$(PNAME).tar.gz
 
+.PHONY: extras
 extras: flake8 fugitive nerdtree
 
 # make install BRANCH=<branch>
