@@ -59,6 +59,7 @@ set novisualbell
 
 set autoindent
 set smartindent
+set textwidth=79
 
 "" look for trailing white spaces
 nnoremap <leader>tw /\s\+$<CR>
@@ -171,7 +172,6 @@ nnoremap <leader>e :set number!<CR>
 "" autocmd`s for python only
 augroup Python
     autocmd!
-    autocmd FileType python set textwidth=99
     "" Shortcut for commenting out lines in python files
     autocmd FileType python nnoremap <buffer> <localleader>c I# <ESC>
     "" Remove trailing white spaces on saving *.py files
