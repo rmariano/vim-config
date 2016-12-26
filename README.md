@@ -139,6 +139,10 @@ They can be installed with:
 
     make extras
 
+**Disclaimer**: Extras are installed within a package so, for they use the
+feature of VIM packages, available from version 8.0 on. Therefore, for this to
+work, you will need **VIM 8** or higher.
+
 ------
 
 Enjoy!
