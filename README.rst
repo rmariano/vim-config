@@ -78,7 +78,7 @@ Captures
 Here are some examples of how the colour scheme looks like.
 
 .. image:: https://rmariano.github.io/itarch/vim-capture1.png
-   :target:: https://rmariano.github.io/itarch/vim-capture1.png
+   :target: https://rmariano.github.io/itarch/vim-capture1.png
    :width: 883px
    :height: 391px
    :alt: Vim capture 1
