@@ -6,11 +6,16 @@ Vim Configuration
    :target: license
    :alt: MIT license
 
-This is an ongoing project of developing Plug-ins for Vim and setting
+This is an ongoing project of that sets up
 a particular configuration for improved productivity.
 
 The goal is to develop a good configuration for the Vim editor, tailored
 for Python development.
+
+It does not change the behaviour of VIM, since this configuration only
+adds comfortable shortcuts, and settings that are recommended for
+sofware development (coding good practices).
+
 
 Installation
 ------------
@@ -25,7 +30,7 @@ Copy and paste the following command in your terminal::
 Automatic
 ---------
 
-Use the included [Makefile](Makefile) script which downloads and replaces the
+Use the included :download:`Makefile <Makefile>`_ script which downloads and replaces the
 files on their latest versions. Bear in mind that requires ``wget`` and
 ``Makefile`` which comes installed in most of the distributions.
 
@@ -82,6 +87,7 @@ Here are some examples of how the colour scheme looks like.
    :width: 883px
    :height: 391px
    :alt: Vim capture 1
+   :align: center
 
 Please note this might depend on the configuration of your terminal as well.
 
@@ -90,6 +96,7 @@ Please note this might depend on the configuration of your terminal as well.
    :width: 574px
    :height: 596px
    :alt: Vim capture 2
+   :align: center
 
 
 Development
@@ -107,7 +114,7 @@ symlinks of the files in this project, like:
 Features
 --------
 
-* Mapping double ``<tab>`` to ``<Esc`` for faster access.
+* Mapping double ``<tab>`` to ``<Esc>`` for faster access.
 
 * `PEP-8 <https://www.python.org/dev/peps/pep-0008/>`_ general rules of text:
   automatically handling spaces instead of tabs, proper indentation, wrap text
@@ -145,10 +152,10 @@ Features
 
 * Mappings for managing tabs
 
-    * ``<leader>`` + ``tn``:  tabnew
-    * ``<leader>`` + ``to``:  tabonly (close all tabs but this)
-    * ``<leader>`` + ``tc``:  tabclose
-    * ``<leader>`` + ``tm``:  tabmove
+    * ``<leader>`` + ``tn``:  **T**\ab **N**\ew, opens a new tab to the right.
+    * ``<leader>`` + ``to``:  **T**\ab **o**\nly, close all tabs but the current one.
+    * ``<leader>`` + ``tc``:  **T**\ab **c**\lose, close current tab.
+    * ``<leader>`` + ``tm``:  **T**\ab **m**\ove, current to the end.
 
 * Window Splits properly configured
 
@@ -160,7 +167,7 @@ Features
 
 * Other features
 
-    * ``scrolloff=10``
+    * ``scrolloff=10``: offset of 10 lines when scrolling
     * Performance improvements
     * Silent bells
     * Set hidden buffers
