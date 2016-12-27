@@ -30,7 +30,7 @@ Copy and paste the following command in your terminal::
 Automatic
 ---------
 
-Use the included :download:`Makefile <Makefile>`_ script which downloads and replaces the
+Use the included `Makefile <Makefile>`_ script which downloads and replaces the
 files on their latest versions. Bear in mind that requires ``wget`` and
 ``Makefile`` which comes installed in most of the distributions.
 
