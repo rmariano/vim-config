@@ -14,7 +14,7 @@ for Python development.
 
 It does not change the behaviour of VIM, since this configuration only
 adds comfortable shortcuts, and settings that are recommended for
-sofware development (coding good practices).
+software development (coding good practices).
 
 
 Installation
@@ -58,7 +58,7 @@ by git.
     cp .vimrc ~/.vimrc
 
 If there are any colour schemes you would like to install, I suggest to copy
-them to ~/.vim/colors (create the directory if it does not exist).
+them to ``~/.vim/colors`` (create the directory if it does not exist).
 Again, configuration can be made by copying the files or by creating symlinks.
 
 .. code:: bash
@@ -153,11 +153,11 @@ Features
 * Mappings for managing tabs
 
     * ``<leader>`` + ``tn``:  **T**\ab **N**\ew, opens a new tab to the right.
-    * ``<leader>`` + ``to``:  **T**\ab **o**\nly, close all tabs but the current one.
-    * ``<leader>`` + ``tc``:  **T**\ab **c**\lose, close current tab.
-    * ``<leader>`` + ``tm``:  **T**\ab **m**\ove, current to the end.
+    * ``<leader>`` + ``to``:  **T**\ab **O**\nly, close all tabs but the current one.
+    * ``<leader>`` + ``tc``:  **T**\ab **C**\lose, close current tab.
+    * ``<leader>`` + ``tm``:  **T**\ab **M**\ove, current to the end.
 
-* Window Splits properly configured
+* Window splits properly configured
 
     * New vertical splits, to the right
     * New horizontal splits, below.
@@ -171,6 +171,12 @@ Features
     * Performance improvements
     * Silent bells
     * Set hidden buffers
+
+Dependencies
+------------
+
+* Vim 7.4+
+* Linux (Other platforms are supported on a best-effort basis).
 
 
 External plug-ins
