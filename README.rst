@@ -3,7 +3,7 @@ Vim Configuration
 -----------------
 
 .. image:: https://img.shields.io/github/license/mashape/apistatus.svg?style=flat-square
-   :target: license
+   :target: LICENSE
    :alt: MIT license
 
 This is an ongoing project of that sets up
