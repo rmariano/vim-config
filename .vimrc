@@ -36,7 +36,7 @@ let maplocalleader="-"
 
 set wrap
 set cursorline
-set wildignore=*.pyc
+set wildignore=*.pyc,**/__pycache__*
 set showmode
 set autoread
 set hidden
