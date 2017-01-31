@@ -109,9 +109,9 @@ Features
 
 * Function keys
 
-    * ``<F2>``: toggle spell check.
-    * ``<F3>``: auto indent/format files (currently only XML support).
-    * ``<F4>``: toggle paste mode
+  * ``<F2>``: toggle spell check.
+  * ``<F3>``: auto indent/format files (currently only XML support).
+  * ``<F4>``: toggle paste mode
 
 * ``<leader>`` +  ``nh`` as a shortcut for ``:nohlsearch``
 * ``<leader>`` + ``p`` is mapped to toggle paste mode, with the label
@@ -137,25 +137,25 @@ Features
 
 * Mappings for managing tabs
 
-    * ``<leader>`` + ``tn``:  **T**\ab **N**\ew, opens a new tab to the right.
-    * ``<leader>`` + ``to``:  **T**\ab **O**\nly, close all tabs but the current one.
-    * ``<leader>`` + ``tc``:  **T**\ab **C**\lose, close current tab.
-    * ``<leader>`` + ``tm``:  **T**\ab **M**\ove, current to the end.
+  * ``<leader>`` + ``tn``:  **T**\ab **N**\ew, opens a new tab to the right.
+  * ``<leader>`` + ``to``:  **T**\ab **O**\nly, close all tabs but the current one.
+  * ``<leader>`` + ``tc``:  **T**\ab **C**\lose, close current tab.
+  * ``<leader>`` + ``tm``:  **T**\ab **M**\ove, current to the end.
 
 * Window splits properly configured
 
-    * New vertical splits, to the right
-    * New horizontal splits, below.
+  * New vertical splits, to the right
+  * New horizontal splits, below.
 
-    * ``<C-j>``: for moving between splits (instead of ``<C-W><C-j>``).
-      Same for ``h``, ``k``, or ``l`` respectively.
+  * ``<C-j>``: for moving between splits (instead of ``<C-W><C-j>``).
+    Same for ``h``, ``k``, or ``l`` respectively.
 
 * Other features
 
-    * ``scrolloff=10``: offset of 10 lines when scrolling
-    * Performance improvements
-    * Silent bells
-    * Set hidden buffers
+  * ``scrolloff=10``: offset of 10 lines when scrolling
+  * Performance improvements
+  * Silent bells
+  * Set hidden buffers
 
 Dependencies
 ------------
