@@ -1,6 +1,5 @@
------------------
 Vim Configuration
------------------
+=================
 
 .. image:: https://img.shields.io/github/license/mashape/apistatus.svg?style=flat-square
    :target: LICENSE
@@ -17,18 +16,23 @@ adds comfortable shortcuts, and settings that are recommended for
 software development (coding good practices).
 
 
+.. contents ::
+
+
 Installation
 ------------
 
 Instant
--------
+^^^^^^^
 
-Copy and paste the following command in your terminal::
+Copy and paste the following command in your terminal:
+
+.. code:: bash
 
 	wget -O /tmp/Makefile -N https://raw.github.com/rmariano/vim-config/master/Makefile && cd /tmp && make && cd -
 
 Automatic
----------
+^^^^^^^^^
 
 Use the included `Makefile <Makefile>`_ script which downloads and replaces the
 files on their latest versions. Bear in mind that requires ``wget`` and
@@ -47,7 +51,7 @@ Or, if you want to install a particular version (tag or branch).
 Note: this is supported from version ``>=v0.4``.
 
 Manual Installation
--------------------
+^^^^^^^^^^^^^^^^^^^
 
 For setting this configuration, you should copy the configuration files to
 the Vim directory, or create symlinks if you want to update the configuration
@@ -78,7 +82,7 @@ support for ``Gvim`` or graphical versions is included for the colour scheme,
 although pull requests are accepted.
 
 Captures
---------
+^^^^^^^^
 
 Here are some examples of how the colour scheme looks like.
 
@@ -102,8 +106,8 @@ Please note this might depend on the configuration of your terminal as well.
 Development
 -----------
 
-If you want to try the project, and tweak the settings, I would recommend to
-clone the repository, and use the development deployment, which creates
+If you want to try the project, and tweak the settings, I would recommend you
+to clone the repository, and use the development deployment, which creates
 symlinks of the files in this project, like:
 
 .. code:: bash
@@ -153,7 +157,8 @@ Features
 * Mappings for managing tabs
 
     * ``<leader>`` + ``tn``:  **T**\ab **N**\ew, opens a new tab to the right.
-    * ``<leader>`` + ``to``:  **T**\ab **O**\nly, close all tabs but the current one.
+    * ``<leader>`` + ``to``:  **T**\ab **O**\nly, close all tabs but the
+                              current one.
     * ``<leader>`` + ``tc``:  **T**\ab **C**\lose, close current tab.
     * ``<leader>`` + ``tm``:  **T**\ab **M**\ove, current to the end.
 
@@ -180,14 +185,20 @@ Dependencies
 
 
 External plug-ins
------------------
+^^^^^^^^^^^^^^^^^
 
 I prefer to keep the ``.vimrc`` configuration as simple as possible, so this
 project is a collection of settings, configurations, and helpers. That
 maintains the Vim installation as general as possible.
 
-However, on a daily basis, we might want some extra, few plugins. Some
-exceptions could be ``flake8``, ``fugitive``, etc.
+However, on a daily basis, we might want some extra, few plug-ins.
+
+These are `flake8 <https://github.com/nvie/vim-flake8>`_,
+`fugitive vim <https://github.com/tpope/vim-fugitive>`_, and
+`NERDTree <https://github.com/scrooloose/nerdtree>`_.
+
+**Please note**: The installation of the extra dependencies requires ``Vim
+8.0`` or newer, since it install the external projects as packages.
 
 They can be installed with:
 
