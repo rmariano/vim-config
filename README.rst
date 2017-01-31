@@ -50,25 +50,6 @@ Or, if you want to install a particular version (tag or branch).
 
 Note: this is supported from version ``>=v0.4``.
 
-Manual Installation
-^^^^^^^^^^^^^^^^^^^
-
-For setting this configuration, you should copy the configuration files to
-the Vim directory, or create symlinks if you want to update the configuration
-by git.
-
-.. code:: bash
-
-    cp .vimrc ~/.vimrc
-
-If there are any colour schemes you would like to install, I suggest to copy
-them to ``~/.vim/colors`` (create the directory if it does not exist).
-Again, configuration can be made by copying the files or by creating symlinks.
-
-.. code:: bash
-
-    cp colors/<colorscheme>.vim ~/.vim/colors/
-
 
 Colour scheme
 -------------
