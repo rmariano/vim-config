@@ -138,8 +138,7 @@ Features
 * Mappings for managing tabs
 
     * ``<leader>`` + ``tn``:  **T**\ab **N**\ew, opens a new tab to the right.
-    * ``<leader>`` + ``to``:  **T**\ab **O**\nly, close all tabs but the
-                              current one.
+    * ``<leader>`` + ``to``:  **T**\ab **O**\nly, close all tabs but the current one.
     * ``<leader>`` + ``tc``:  **T**\ab **C**\lose, close current tab.
     * ``<leader>`` + ``tm``:  **T**\ab **M**\ove, current to the end.
 
