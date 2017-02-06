@@ -14,6 +14,12 @@ BRANCH := master
 REPO_URL := https://raw.github.com/rmariano/vim-config
 REMOTELOC := $(REPO_URL)/$(BRANCH)
 
+SOURCE_COLORS := $(PWD)/colors/tromso.vim
+TARGET_COLORS := $(COLORS_DIR)/tromso.vim
+
+SOURCE_SYNTAX := $(PWD)/syntax/python.vim
+TARGET_SYNTAX := $(SYNTAX_DIR)/python.vim
+
 all: install
 
 .PHONY: dev-deploy
@@ -25,8 +31,14 @@ dev-deploy:
 		echo -e "\tLinking $$file -> $$target"; \
 		ln -sfn $$file $$target; \
 	done
-	ln -sfn $(PWD)/colors/tromso.vim $(COLORS_DIR)/tromso.vim
-	ln -sfn $(PWD)/syntax/python.vim $(SYNTAX_DIR)/python.vim
+	ln -sfn $(SOURCE_COLORS) $(TARGET_COLORS)
+	ln -sfn $(SOURCE_SYNTAX) $(TARGET_SYNTAX)
+
+.PHONY: deploy
+deploy: dirs clean
+	/usr/bin/cp -f .vimrc $(HOME)/.vimrc
+	ln -sfn $(SOURCE_COLORS) $(TARGET_COLORS)
+	ln -sfn $(SOURCE_SYNTAX) $(TARGET_SYNTAX)
 
 .PHONY: dirs
 dirs:
@@ -65,8 +77,8 @@ extras: flake8 fugitive nerdtree
 install: dirs
 	echo "Getting files from $(REMOTELOC)"
 	@wget -O $(HOME)/.vimrc $(REMOTELOC)/.vimrc
-	@wget -O $(COLORS_DIR)/tromso.vim $(REMOTELOC)/colors/tromso.vim
-	@wget -O $(SYNTAX_DIR)/python.vim $(REMOTELOC)/syntax/python.vim
+	@wget -O $(TARGET_COLORS) $(REMOTELOC)/colors/tromso.vim
+	@wget -O $(TARGET_SYNTAX) $(REMOTELOC)/syntax/python.vim
 
 .PHONY: changelog
 changelog:
@@ -76,3 +88,7 @@ changelog:
 .PHONY: release
 release:
 	git tag -a $(TAG) -m "Vim config $(TAG)"
+
+.PHONY: clean
+clean:
+	/usr/bin/rm -f $(HOME)/.vimrc $(TARGET_COLORS) $(TARGET_SYNTAX)
