@@ -31,7 +31,7 @@ dev-deploy:
 
 .PHONY: deploy
 deploy: dirs clean
-	cp -f .vimrc $(HOME)/.vimrc
+	cp -f $(PWD)/.vimrc $(HOME)/.vimrc
 	cp -f $(SOURCE_COLORS) $(TARGET_COLORS)
 	cp -f $(SOURCE_SYNTAX) $(TARGET_SYNTAX)
 
