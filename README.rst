@@ -29,7 +29,8 @@ Copy and paste the following command in your terminal:
 
 .. code:: bash
 
-	wget -O /tmp/Makefile -N https://raw.github.com/rmariano/vim-config/master/Makefile && cd /tmp && make && cd -
+    mkdir -p ~/.vim && wget -O ~/.vim/Makefile -N https://raw.github.com/rmariano/vim-config/master/Makefile && make -C ~/.vim install
+
 
 Automatic
 ^^^^^^^^^
