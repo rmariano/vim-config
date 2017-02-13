@@ -25,20 +25,15 @@ all: install
 .PHONY: dev-deploy
 dev-deploy:
 	@echo "Symlinking files..."
-	@for file in $(shell find $(CURDIR) -name ".*" -not -name ".gitignore" -not -name ".git" -not -name ".*.swp"); do \
-		f=$$(basename $$file); \
-		target=$(HOME)/$$f; \
-		echo -e "\tLinking $$file -> $$target"; \
-		ln -sfn $$file $$target; \
-	done
+	ln -sfn $(PWD)/.vimrc $(HOME)/.vimrc
 	ln -sfn $(SOURCE_COLORS) $(TARGET_COLORS)
 	ln -sfn $(SOURCE_SYNTAX) $(TARGET_SYNTAX)
 
 .PHONY: deploy
 deploy: dirs clean
-	/usr/bin/cp -f .vimrc $(HOME)/.vimrc
-	ln -sfn $(SOURCE_COLORS) $(TARGET_COLORS)
-	ln -sfn $(SOURCE_SYNTAX) $(TARGET_SYNTAX)
+	cp -f .vimrc $(HOME)/.vimrc
+	cp -f $(SOURCE_COLORS) $(TARGET_COLORS)
+	cp -f $(SOURCE_SYNTAX) $(TARGET_SYNTAX)
 
 .PHONY: dirs
 dirs:
@@ -91,4 +86,4 @@ release:
 
 .PHONY: clean
 clean:
-	/usr/bin/rm -f $(HOME)/.vimrc $(TARGET_COLORS) $(TARGET_SYNTAX)
+	rm -f $(HOME)/.vimrc $(TARGET_COLORS) $(TARGET_SYNTAX)
