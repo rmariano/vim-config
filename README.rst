@@ -51,6 +51,19 @@ Or, if you want to install a particular version (tag or branch).
 
 Note: this is supported from version ``>=v0.4``.
 
+The previous methods rely on getting the files from the Internet, but
+alternatively, if you have already downloaded the project, and unpacked it
+somewhere in your file system, you can install it by running:
+
+.. code:: bash
+
+    make deploy
+
+That will copy the files to their respective locations. Note that this will
+replace any previous instances of those file you might have had there. If you
+want to start over, you could simply run ``make clean``, which will remove the
+files for this project (not the extra packages, though).
+
 
 Colour scheme
 -------------
@@ -61,7 +74,7 @@ might require to be run as: ``tmux -2`` in order to support this.
 
 In addition, just the command-line classic Vim version is supported, so no
 support for ``Gvim`` or graphical versions is included for the colour scheme,
-although pull requests are accepted.
+although pull requests are welcomed.
 
 Captures
 ^^^^^^^^
@@ -85,8 +98,8 @@ Please note this might depend on the configuration of your terminal as well.
    :align: center
 
 
-Development
------------
+Contributing
+------------
 
 If you want to try the project, and tweak the settings, I would recommend you
 to clone the repository, and use the development deployment, which creates
@@ -95,6 +108,8 @@ symlinks of the files in this project, like:
 .. code:: bash
 
     make dev-deploy
+
+In addition, take a moment to read the contributing guidelines.
 
 
 Features
