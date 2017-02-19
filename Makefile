@@ -77,7 +77,7 @@ install: dirs
 
 .PHONY: changelog
 changelog:
-	@git log master.. --oneline --pretty=format:"   * %s"
+	@git log --no-merges master.. --oneline --pretty=format:"   * %s"
 
 # make release TAG=<tag>
 .PHONY: release
