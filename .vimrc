@@ -176,7 +176,7 @@ augroup Python
     autocmd FileType python nnoremap <buffer> <localleader>c I# <ESC>
     "" Remove trailing white spaces on saving *.py files
     autocmd BufWritePre *.py :%s/\s\+$//e
-    let g:python_highlight_all = 1
 augroup END
 "" autocmd`s for other file types
 autocmd FileType xml map <F3> :call FormatXML()<CR>
+let g:python_highlight_all = 1
