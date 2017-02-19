@@ -75,4 +75,4 @@ changelog:
 # make release TAG=<tag>
 .PHONY: release
 release:
-	git tag -a $(TAG) -m "Vim config $(TAG)"
+	git tag -s $(TAG) -m "Vim config $(TAG)"
