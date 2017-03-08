@@ -1,5 +1,4 @@
 * In case of changes in the colour scheme or syntax configuration, please
   consider attaching a capture of the new look.
 
-* Point the pull request to the development branch for the next release (branch
-  named with the minimum version ending in "-dev").
+* Point the pull request to develop
