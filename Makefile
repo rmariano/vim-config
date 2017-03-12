@@ -19,6 +19,9 @@ TARGET_COLORS := $(COLORS_DIR)/tromso.vim
 
 SOURCE_SYNTAX := $(PWD)/syntax/python.vim
 TARGET_SYNTAX := $(SYNTAX_DIR)/python.vim
+PRECHANGELOG = prechangelog.rst
+YELLOW := \e[93m
+RED := \e[91m
 
 all: install
 
@@ -75,14 +78,26 @@ install: dirs
 	@wget -O $(TARGET_COLORS) $(REMOTELOC)/colors/tromso.vim
 	@wget -O $(TARGET_SYNTAX) $(REMOTELOC)/syntax/python.vim
 
+# make changelog TAG=<tag>
 .PHONY: changelog
 changelog:
-	@git log --no-merges master.. --oneline --pretty=format:"   * %s"
+	@echo "Change Log" >> $(PRECHANGELOG)
+	@echo -e "==========\n" >> $(PRECHANGELOG)
+	@echo "$(TAG) ($(shell date --rfc-3339=date))" >> $(PRECHANGELOG)
+	@echo "-----------------" >> $(PRECHANGELOG)
+	@git log --no-merges master.. --oneline --pretty=format:"* %s" >> $(PRECHANGELOG)
+	@echo -ne "\n\n" >> $(PRECHANGELOG)
+	@tail -n +4 changelog.rst >> $(PRECHANGELOG)
+	@sed -i 's/\(" Version:\).*/\1 $(TAG)/g' $(PWD)/.vimrc
+	@echo -e "$(RED)$(PRECHANGELOG) $(YELLOW)created. Adjust & review status before releasing!"
 
 # make release TAG=<tag>
 .PHONY: release
-release:
-	git tag -S $(TAG)
+release: $(PRECHANGELOG)
+	mv {pre,}changelog.rst
+	git add .
+	git commit
+	git tag -s $(TAG)
 
 .PHONY: clean
 clean:
