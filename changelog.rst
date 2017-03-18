@@ -1,6 +1,23 @@
 Change Log
 ==========
 
+v0.5 (2017-03-18)
+-----------------
+* Makefile: Improved installation and more (deploy, install extras, etc.).
+* CONTRIBUTING guidelines.
+* Uses Python syntax highlighting from fork, with bespoke configuration.
+* highlight all global in configuration.
+* set highlight all for Python.
+* PR template: For PRs.
+* Documentation improvements:
+  changelog moves to rst
+  README improved and updated.
+* checklist for PR templates & contributing guide.
+* Ignore ``__pycache__`` from auto-completion (added besides \*.pyc files).
+* 79 cols for all the things! (Not only Python).
+* Install all extras in a package! (``make extras``, requires Vim 8.0+).
+  Extras are: ``NERDTree``, ``fugiritve-vim``, and ``Flake8``.
+
 v0.4 (2016-11-02)
 -----------------
 * Inform in the status bar when spell=on
