@@ -1,6 +1,6 @@
 "" Vim configuration
 " Maintainer: Mariano Anaya
-" Version: v0.5
+" Version: v0.6-dev
 " Created: 01 Jan 2014
 """"""""""""""""""""""""""""""
 
@@ -15,8 +15,6 @@ set incsearch
 set wildmenu
 set showmatch
 set history=50
-"" New escaping sequence, double-tab for returning to normal mode
-inoremap <Tab><Tab> <Esc>
 
 "" \t handled properly & PEP8
 set expandtab
