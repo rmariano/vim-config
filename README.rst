@@ -115,8 +115,6 @@ In addition, take a moment to read the contributing guidelines.
 Features
 --------
 
-* Mapping double ``<tab>`` to ``<Esc>`` for faster access.
-
 * `PEP-8 <https://www.python.org/dev/peps/pep-0008/>`_ general rules of text:
   automatically handling spaces instead of tabs, proper indentation, wrap text
   to 79 columns, margin set (toggle-able), etc.
