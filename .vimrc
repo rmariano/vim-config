@@ -37,6 +37,8 @@ set cursorline
 set wildignore=*.pyc,**/__pycache__*
 set showmode
 set autoread
+set autowrite
+set autowriteall
 set hidden
 
 "" Where to open new windows
