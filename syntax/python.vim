@@ -493,6 +493,7 @@ endif
 
 syn keyword pythonConvention    self
 syn keyword pythonConvention    cls
+syn keyword pythonConvention    __dict__
 
 
 if s:Enabled("g:python_slow_sync")
