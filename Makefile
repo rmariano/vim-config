@@ -8,6 +8,7 @@ DIRS = \
 	   $(HOME)/.vim/autoload \
 	   $(HOME)/.vim/plugin \
 	   $(HOME)/.vim/ftplugin \
+	   $(HOME)/.vim/after/ftplugin \
 	   $(PACKAGES_DIR)
 
 BRANCH := master
@@ -26,17 +27,19 @@ RED := \e[91m
 all: install
 
 .PHONY: dev-deploy
-dev-deploy:
+dev-deploy: dirs
 	@echo "Symlinking files..."
 	ln -sfn $(PWD)/.vimrc $(HOME)/.vimrc
 	ln -sfn $(SOURCE_COLORS) $(TARGET_COLORS)
 	ln -sfn $(SOURCE_SYNTAX) $(TARGET_SYNTAX)
+	ln -sfn $(PWD)/after/ftplugin/*.vim $(HOME)/.vim/after/ftplugin/
 
 .PHONY: deploy
 deploy: dirs clean
 	cp -f $(PWD)/.vimrc $(HOME)/.vimrc
 	cp -f $(SOURCE_COLORS) $(TARGET_COLORS)
 	cp -f $(SOURCE_SYNTAX) $(TARGET_SYNTAX)
+	cp -fa $(PWD)/after/ftplugin $(HOME)/.vim/after
 
 .PHONY: dirs
 dirs:
