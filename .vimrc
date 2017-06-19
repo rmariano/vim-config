@@ -168,17 +168,6 @@ map <F2> :call ToggleLangCheck()<CR>
 set pastetoggle=<F4>
 
 nnoremap <leader>e :set number!<CR>
-
-"" autocmd`s for python only
-augroup Python
-    autocmd!
-    "" Shortcut for commenting out lines in python files
-    autocmd FileType python nnoremap <buffer> <localleader>c I# <ESC>
-    "" Remove trailing white spaces on saving *.py files
-augroup END
-"" autocmd`s for other file types
 autocmd FileType xml map <F3> :call FormatXML()<CR>
-let g:python_highlight_all = 1
-
 "" Remove trailing white spaces upon saving
 autocmd BufWritePre * :%s/\s\+$//e
