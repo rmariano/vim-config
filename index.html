@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<style class="text/css">
+@import url("html4css1.css");
+@import url("nikola_rst.css");
+
+</style>
+</head>
+<body>
+<a class="reference external image-reference" href="LICENSE"><img alt="MIT license" src="https://img.shields.io/github/license/mashape/apistatus.svg?style=flat-square"></a>
+<p>This is an ongoing project of that sets up
+a particular configuration for improved productivity.</p>
+<p>The goal is to develop a good configuration for the Vim editor, tailored
+for Python development.</p>
+<p>It does not change the behaviour of VIM, since this configuration only
+adds comfortable shortcuts, and settings that are recommended for
+software development (coding good practices).</p>
+<div class="contents topic" id="contents">
+<p class="topic-title first">Contents</p>
+<ul class="simple">
+<li>
+<a class="reference internal" href="#installation" id="id1">Installation</a><ul>
+<li><a class="reference internal" href="#instant" id="id2">Instant</a></li>
+<li><a class="reference internal" href="#automatic" id="id3">Automatic</a></li>
+</ul>
+</li>
+<li>
+<a class="reference internal" href="#colour-scheme" id="id4">Colour scheme</a><ul>
+<li><a class="reference internal" href="#captures" id="id5">Captures</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#contributing" id="id6">Contributing</a></li>
+<li><a class="reference internal" href="#features" id="id7">Features</a></li>
+<li>
+<a class="reference internal" href="#dependencies" id="id8">Dependencies</a><ul>
+<li><a class="reference internal" href="#external-plug-ins" id="id9">External plug-ins</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="installation">
+<h1><a class="toc-backref" href="#id1">Installation</a></h1>
+<div class="section" id="instant">
+<h2><a class="toc-backref" href="#id2">Instant</a></h2>
+<p>Copy and paste the following command in your terminal:</p>
+<pre class="code bash"><a name="rest_code_9517ee6f42244afb9c1047dc541fbe5e-1"></a>mkdir -p ~/.vim <span class="o">&amp;&amp;</span> wget -O ~/.vim/Makefile -N https://raw.github.com/rmariano/vim-config/master/Makefile <span class="o">&amp;&amp;</span> make -C ~/.vim install
+</pre>
+</div>
+<div class="section" id="automatic">
+<h2><a class="toc-backref" href="#id3">Automatic</a></h2>
+<p>Use the included <a class="reference external" href="Makefile">Makefile</a> script which downloads and replaces the
+files on their latest versions. Bear in mind that requires <tt class="docutils literal">wget</tt> and
+<tt class="docutils literal">Makefile</tt> which comes installed in most of the distributions.</p>
+<pre class="code bash"><a name="rest_code_571b8cc3edd44da3b1a8f62c239122e4-1"></a>make install
+</pre>
+<p>Or, if you want to install a particular version (tag or branch).</p>
+<pre class="code bash"><a name="rest_code_190fcbea0af44d88a0a43c1c2ed8a17f-1"></a>make install <span class="nv">BRANCH</span><span class="o">=</span>&lt;tag_or_branch&gt;
+</pre>
+<p>Note: this is supported from version <tt class="docutils literal">&gt;=v0.4</tt>.</p>
+<p>The previous methods rely on getting the files from the Internet, but
+alternatively, if you have already downloaded the project, and unpacked it
+somewhere in your file system, you can install it by running:</p>
+<pre class="code bash"><a name="rest_code_09db6f7173ae4dceb6fbda4e1d190685-1"></a>make deploy
+</pre>
+<p>That will copy the files to their respective locations. Note that this will
+replace any previous instances of those file you might have had there. If you
+want to start over, you could simply run <tt class="docutils literal">make clean</tt>, which will remove the
+files for this project (not the extra packages, though).</p>
+</div>
+</div>
+<div class="section" id="colour-scheme">
+<h1><a class="toc-backref" href="#id4">Colour scheme</a></h1>
+<p>The colour scheme requires the terminal to support 256 colours. Most of the
+terminals already support this, but some terminal multiplexers like <tt class="docutils literal">tmux</tt>
+might require to be run as: <tt class="docutils literal">tmux <span class="pre">-2</span></tt> in order to support this.</p>
+<p>In addition, just the command-line classic Vim version is supported, so no
+support for <tt class="docutils literal">Gvim</tt> or graphical versions is included for the colour scheme,
+although pull requests are welcomed.</p>
+<div class="section" id="captures">
+<h2><a class="toc-backref" href="#id5">Captures</a></h2>
+<p>Here are some examples of how the colour scheme looks like.</p>
+<a class="reference external image-reference" href="https://rmariano.github.io/itarch/vim-capture1.png"><img alt="Vim capture 1" class="align-center" src="https://rmariano.github.io/itarch/vim-capture1.png" style="width: 883px; height: 391px;"></a>
+<p>Please note this might depend on the configuration of your terminal as well.</p>
+<a class="reference external image-reference" href="https://rmariano.github.io/itarch/vim-capture2.png"><img alt="Vim capture 2" class="align-center" src="https://rmariano.github.io/itarch/vim-capture2.png" style="width: 574px; height: 596px;"></a>
+</div>
+</div>
+<div class="section" id="contributing">
+<h1><a class="toc-backref" href="#id6">Contributing</a></h1>
+<p>If you want to try the project, and tweak the settings, I would recommend you
+to clone the repository, and use the development deployment, which creates
+symlinks of the files in this project, like:</p>
+<pre class="code bash"><a name="rest_code_6e54e742ed3243339a6a4d5d9accdf45-1"></a>make dev-deploy
+</pre>
+<p>In addition, take a moment to read the contributing guidelines.</p>
+</div>
+<div class="section" id="features">
+<h1><a class="toc-backref" href="#id7">Features</a></h1>
+<ul class="simple">
+<li>Mapping double <tt class="docutils literal">&lt;tab&gt;</tt> to <tt class="docutils literal">&lt;Esc&gt;</tt> for faster access.</li>
+<li>
+<a class="reference external" href="https://www.python.org/dev/peps/pep-0008/">PEP-8</a> general rules of text:
+automatically handling spaces instead of tabs, proper indentation, wrap text
+to 79 columns, margin set (toggle-able), etc.</li>
+<li>
+<tt class="docutils literal">autoindent</tt> &amp; <tt class="docutils literal">smartindent</tt>.</li>
+<li>Function keys<ul>
+<li>
+<tt class="docutils literal">&lt;F2&gt;</tt>: toggle spell check.</li>
+<li>
+<tt class="docutils literal">&lt;F3&gt;</tt>: auto indent/format files (currently only XML support).</li>
+<li>
+<tt class="docutils literal">&lt;F4&gt;</tt>: toggle paste mode</li>
+</ul>
+</li>
+<li>
+<tt class="docutils literal">&lt;leader&gt;</tt> +  <tt class="docutils literal">nh</tt> as a shortcut for <tt class="docutils literal">:nohlsearch</tt>
+</li>
+<li>
+<tt class="docutils literal">&lt;leader&gt;</tt> + <tt class="docutils literal">p</tt> is mapped to toggle paste mode, with the label
+indicating in the status bar if is active or not.</li>
+<li>A colour scheme I like.</li>
+<li>A status line with useful information (file name with path, modification
+flag, file type, column, lines, and position (in %).</li>
+<li>
+<tt class="docutils literal">;t</tt> available for searching development tags, such as <tt class="docutils literal">TODO</tt> or
+<tt class="docutils literal">FIXME</tt>, rendering the results in a quick fix window. Warning: searches
+recursively.</li>
+<li>
+<tt class="docutils literal">&lt;leader&gt;</tt> + <tt class="docutils literal">n</tt>, <tt class="docutils literal">&lt;leader&gt;</tt> + <tt class="docutils literal">p</tt> for moving to the next and
+previous entries in the quick-fix window, respectively. <tt class="docutils literal">&lt;leader&gt;</tt> + <tt class="docutils literal">q</tt>
+for closing it.</li>
+<li>
+<tt class="docutils literal">&lt;leader&gt;</tt> + <tt class="docutils literal">e</tt> to toggle line numbers (enabled by default).</li>
+<li>Can save files with <tt class="docutils literal">sudo</tt> that were opened with less permissions: <tt class="docutils literal">:w!!</tt>
+to <tt class="docutils literal">sudo</tt> save the file.</li>
+<li>Mappings for managing tabs<ul>
+<li>
+<tt class="docutils literal">&lt;leader&gt;</tt> + <tt class="docutils literal">tn</tt>:  <strong>T</strong>ab <strong>N</strong>ew, opens a new tab to the right.</li>
+<li>
+<tt class="docutils literal">&lt;leader&gt;</tt> + <tt class="docutils literal">to</tt>:  <strong>T</strong>ab <strong>O</strong>nly, close all tabs but the current one.</li>
+<li>
+<tt class="docutils literal">&lt;leader&gt;</tt> + <tt class="docutils literal">tc</tt>:  <strong>T</strong>ab <strong>C</strong>lose, close current tab.</li>
+<li>
+<tt class="docutils literal">&lt;leader&gt;</tt> + <tt class="docutils literal">tm</tt>:  <strong>T</strong>ab <strong>M</strong>ove, current to the end.</li>
+</ul>
+</li>
+<li>Window splits properly configured<ul>
+<li>New vertical splits, to the right</li>
+<li>New horizontal splits, below.</li>
+<li>
+<tt class="docutils literal"><span class="pre">&lt;C-j&gt;</span></tt>: for moving between splits (instead of <tt class="docutils literal"><span class="pre">&lt;C-W&gt;&lt;C-j&gt;</span></tt>).
+Same for <tt class="docutils literal">h</tt>, <tt class="docutils literal">k</tt>, or <tt class="docutils literal">l</tt> respectively.</li>
+</ul>
+</li>
+<li>Other features<ul>
+<li>
+<tt class="docutils literal">scrolloff=10</tt>: offset of 10 lines when scrolling</li>
+<li>Performance improvements</li>
+<li>Silent bells</li>
+<li>Set hidden buffers</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="dependencies">
+<h1><a class="toc-backref" href="#id8">Dependencies</a></h1>
+<ul class="simple">
+<li>Vim 7.4+</li>
+<li>Linux (Other platforms are supported on a best-effort basis).</li>
+</ul>
+<div class="section" id="external-plug-ins">
+<h2><a class="toc-backref" href="#id9">External plug-ins</a></h2>
+<p>I prefer to keep the <tt class="docutils literal">.vimrc</tt> configuration as simple as possible, so this
+project is a collection of settings, configurations, and helpers. That
+maintains the Vim installation as general as possible.</p>
+<p>However, on a daily basis, we might want some extra, few plug-ins.</p>
+<p>These are <a class="reference external" href="https://github.com/nvie/vim-flake8">flake8</a>,
+<a class="reference external" href="https://github.com/tpope/vim-fugitive">fugitive vim</a>, and
+<a class="reference external" href="https://github.com/scrooloose/nerdtree">NERDTree</a>.</p>
+<p><strong>Please note</strong>: The installation of the extra dependencies requires <tt class="docutils literal">Vim
+8.0</tt> or newer, since it install the external projects as packages.</p>
+<p>They can be installed with:</p>
+<pre class="code bash"><a name="rest_code_f7420a20a8f74c64b44357fe4226d8eb-1"></a>make extras
+</pre>
+<p>Enjoy!</p>
+</div>
+</div>
+
+</body>
+</html>
+
