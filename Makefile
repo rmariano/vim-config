@@ -25,6 +25,10 @@ RED := \e[91m
 
 all: install
 
+.PHONY: doc
+doc:
+	nikola rst2html README.rst > index.html
+
 .PHONY: dev-deploy
 dev-deploy:
 	@echo "Symlinking files..."
