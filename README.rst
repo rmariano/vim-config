@@ -65,59 +65,17 @@ want to start over, you could simply run ``make clean``, which will remove the
 files for this project (not the extra packages, though).
 
 
-Colour scheme
--------------
-
-The colour scheme requires the terminal to support 256 colours. Most of the
-terminals already support this, but some terminal multiplexers like ``tmux``
-might require to be run as: ``tmux -2`` in order to support this.
-
-In addition, just the command-line classic Vim version is supported, so no
-support for ``Gvim`` or graphical versions is included for the colour scheme,
-although pull requests are welcomed.
-
-Captures
-^^^^^^^^
-
-Here are some examples of how the colour scheme looks like.
-
-.. image:: https://rmariano.github.io/itarch/vim-capture1.png
-   :target: https://rmariano.github.io/itarch/vim-capture1.png
-   :width: 883px
-   :height: 391px
-   :alt: Vim capture 1
-   :align: center
-
-Please note this might depend on the configuration of your terminal as well.
-
-.. image:: https://rmariano.github.io/itarch/vim-capture2.png
-   :target: https://rmariano.github.io/itarch/vim-capture2.png
-   :width: 574px
-   :height: 596px
-   :alt: Vim capture 2
-   :align: center
-
-
-Contributing
-------------
-
-If you want to try the project, and tweak the settings, I would recommend you
-to clone the repository, and use the development deployment, which creates
-symlinks of the files in this project, like:
-
-.. code:: bash
-
-    make dev-deploy
-
-In addition, take a moment to read the contributing guidelines.
-
-
 Features
 --------
 
 * `PEP-8 <https://www.python.org/dev/peps/pep-0008/>`_ general rules of text:
   automatically handling spaces instead of tabs, proper indentation, wrap text
   to 79 columns, margin set (toggle-able), etc.
+
+* ``<leader>`` + ``tw`` will highlight trailing white spaces.
+
+* ``<leader>`` + ``w`` will remove them (they'll also be automatically removed
+  when saving :-)
 
 * ``autoindent`` & ``smartindent``.
 
@@ -170,6 +128,52 @@ Features
   * Performance improvements
   * Silent bells
   * Set hidden buffers
+
+Colour scheme
+-------------
+
+The colour scheme requires the terminal to support 256 colours. Most of the
+terminals already support this, but some terminal multiplexers like ``tmux``
+might require to be run as: ``tmux -2`` in order to support this.
+
+In addition, just the command-line classic Vim version is supported, so no
+support for ``Gvim`` or graphical versions is included for the colour scheme,
+although pull requests are welcomed.
+
+Captures
+^^^^^^^^
+
+Here are some examples of how the colour scheme looks like.
+
+.. image:: https://rmariano.github.io/itarch/vim-capture1.png
+   :target: https://rmariano.github.io/itarch/vim-capture1.png
+   :width: 883px
+   :height: 391px
+   :alt: Vim capture 1
+   :align: center
+
+Please note this might depend on the configuration of your terminal as well.
+
+.. image:: https://rmariano.github.io/itarch/vim-capture2.png
+   :target: https://rmariano.github.io/itarch/vim-capture2.png
+   :width: 574px
+   :height: 596px
+   :alt: Vim capture 2
+   :align: center
+
+
+Contributing
+------------
+
+If you want to try the project, and tweak the settings, I would recommend you
+to clone the repository, and use the development deployment, which creates
+symlinks of the files in this project, like:
+
+.. code:: bash
+
+    make dev-deploy
+
+In addition, take a moment to read the contributing guidelines.
 
 Dependencies
 ------------
