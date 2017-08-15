@@ -104,4 +104,7 @@ release: $(PRECHANGELOG)
 
 .PHONY: clean
 clean:
-	rm -f $(HOME)/.vimrc $(TARGET_COLORS) $(TARGET_SYNTAX)
+	rm -fr $(HOME)/.vimrc \
+		$(TARGET_COLORS) \
+		$(TARGET_SYNTAX) \
+		$(HOME)/.vim/after/ftplugin
