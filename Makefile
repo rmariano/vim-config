@@ -11,6 +11,7 @@ DIRS = \
 	   $(PACKAGES_DIR)
 
 BRANCH := master
+REPO_HOME := https://github.com/rmariano/vim-config
 REPO_URL := https://raw.github.com/rmariano/vim-config
 REMOTELOC := $(REPO_URL)/$(BRANCH)
 
@@ -73,10 +74,10 @@ extras: flake8 fugitive nerdtree
 # make install BRANCH=<branch>
 .PHONY: install
 install: dirs
-	echo "Getting files from $(REMOTELOC)"
-	@wget -O $(HOME)/.vimrc $(REMOTELOC)/.vimrc
-	@wget -O $(TARGET_COLORS) $(REMOTELOC)/colors/tromso.vim
-	@wget -O $(TARGET_SYNTAX) $(REMOTELOC)/syntax/python.vim
+	@wget -O /tmp/vimconfig.zip $(REPO_HOME)/archive/$(BRANCH).zip
+	@mkdir -p /tmp/vimconfig
+	@unzip -d /tmp/vimconfig /tmp/vimconfig.zip
+	$(MAKE) -C /tmp/vimconfig/vim-config-$(BRANCH) deploy
 
 # make changelog TAG=<tag>
 .PHONY: changelog
