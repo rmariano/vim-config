@@ -171,3 +171,5 @@ nnoremap <leader>e :set number!<CR>
 autocmd FileType xml map <F3> :call FormatXML()<CR>
 "" Remove trailing white spaces upon saving
 autocmd BufWritePre * :%s/\s\+$//e
+"" Python: Highlight everything
+let g:python_highlight_all = 1
