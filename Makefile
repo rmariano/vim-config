@@ -77,10 +77,10 @@ extras: flake8 fugitive nerdtree
 # make install BRANCH=<branch>
 .PHONY: install
 install: dirs
-	@wget -O /tmp/vimconfig.zip $(REPO_HOME)/archive/$(BRANCH).zip
-	@mkdir -p /tmp/vimconfig
-	@unzip -d /tmp/vimconfig /tmp/vimconfig.zip
-	$(MAKE) -C /tmp/vimconfig/vim-config-$(BRANCH) deploy
+	rm -fr /tmp/vimconfig && mkdir -p /tmp/vimconfig
+	@wget -O /tmp/vimconfig/vimconfig.zip $(REPO_HOME)/archive/$(BRANCH).zip
+	@unzip -d /tmp/vimconfig /tmp/vimconfig/vimconfig.zip
+	@cd /tmp/vimconfig/vim-config-$(BRANCH) && make deploy && cd -
 
 # make changelog TAG=<tag>
 .PHONY: changelog
