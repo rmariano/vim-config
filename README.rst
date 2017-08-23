@@ -83,8 +83,10 @@ Features
 
   * ``<F2>``: toggle spell check.
   * ``<F3>``: Correct files automatically
-    * For XML with correct the formatting
-    * Python files: auto-PEP-8, correct imports, and run ``flake8`` checks.
+
+    * XML: auto-format & indent.
+    * Python: PEP-8, sort imports, and run ``flake8`` checks.
+
   * ``<F4>``: toggle paste mode
 
 * ``<leader>`` +  ``nh`` as a shortcut for ``:nohlsearch``
