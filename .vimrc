@@ -1,6 +1,6 @@
 "" Vim configuration
 " Maintainer: Mariano Anaya
-" Version: v0.5
+" Version: v0.6
 " Created: 01 Jan 2014
 """"""""""""""""""""""""""""""
 
@@ -15,8 +15,6 @@ set incsearch
 set wildmenu
 set showmatch
 set history=50
-"" New escaping sequence, double-tab for returning to normal mode
-inoremap <Tab><Tab> <Esc>
 
 "" \t handled properly & PEP8
 set expandtab
@@ -39,6 +37,8 @@ set cursorline
 set wildignore=*.pyc,**/__pycache__*
 set showmode
 set autoread
+set autowrite
+set autowriteall
 set hidden
 
 "" Where to open new windows
@@ -168,15 +168,8 @@ map <F2> :call ToggleLangCheck()<CR>
 set pastetoggle=<F4>
 
 nnoremap <leader>e :set number!<CR>
-
-"" autocmd`s for python only
-augroup Python
-    autocmd!
-    "" Shortcut for commenting out lines in python files
-    autocmd FileType python nnoremap <buffer> <localleader>c I# <ESC>
-    "" Remove trailing white spaces on saving *.py files
-    autocmd BufWritePre *.py :%s/\s\+$//e
-augroup END
-"" autocmd`s for other file types
 autocmd FileType xml map <F3> :call FormatXML()<CR>
+"" Remove trailing white spaces upon saving
+autocmd BufWritePre * :%s/\s\+$//e
+"" Python: Highlight everything
 let g:python_highlight_all = 1

@@ -8,9 +8,11 @@ DIRS = \
 	   $(HOME)/.vim/autoload \
 	   $(HOME)/.vim/plugin \
 	   $(HOME)/.vim/ftplugin \
+	   $(HOME)/.vim/after/ftplugin \
 	   $(PACKAGES_DIR)
 
 BRANCH := master
+REPO_HOME := https://github.com/rmariano/vim-config
 REPO_URL := https://raw.github.com/rmariano/vim-config
 REMOTELOC := $(REPO_URL)/$(BRANCH)
 
@@ -26,17 +28,19 @@ RED := \e[91m
 all: install
 
 .PHONY: dev-deploy
-dev-deploy:
+dev-deploy: dirs
 	@echo "Symlinking files..."
 	ln -sfn $(PWD)/.vimrc $(HOME)/.vimrc
 	ln -sfn $(SOURCE_COLORS) $(TARGET_COLORS)
 	ln -sfn $(SOURCE_SYNTAX) $(TARGET_SYNTAX)
+	ln -sfn $(PWD)/after/ftplugin/*.vim $(HOME)/.vim/after/ftplugin/
 
 .PHONY: deploy
 deploy: dirs clean
 	cp -f $(PWD)/.vimrc $(HOME)/.vimrc
 	cp -f $(SOURCE_COLORS) $(TARGET_COLORS)
 	cp -f $(SOURCE_SYNTAX) $(TARGET_SYNTAX)
+	cp -fa $(PWD)/after/ftplugin $(HOME)/.vim/after
 
 .PHONY: dirs
 dirs:
@@ -73,10 +77,10 @@ extras: flake8 fugitive nerdtree
 # make install BRANCH=<branch>
 .PHONY: install
 install: dirs
-	echo "Getting files from $(REMOTELOC)"
-	@wget -O $(HOME)/.vimrc $(REMOTELOC)/.vimrc
-	@wget -O $(TARGET_COLORS) $(REMOTELOC)/colors/tromso.vim
-	@wget -O $(TARGET_SYNTAX) $(REMOTELOC)/syntax/python.vim
+	rm -fr /tmp/vimconfig && mkdir -p /tmp/vimconfig
+	@wget -O /tmp/vimconfig/vimconfig.zip $(REPO_HOME)/archive/$(BRANCH).zip
+	@unzip -d /tmp/vimconfig /tmp/vimconfig/vimconfig.zip
+	@cd /tmp/vimconfig/vim-config-$(BRANCH) && make deploy && cd -
 
 # make changelog TAG=<tag>
 .PHONY: changelog
@@ -101,4 +105,7 @@ release: $(PRECHANGELOG)
 
 .PHONY: clean
 clean:
-	rm -f $(HOME)/.vimrc $(TARGET_COLORS) $(TARGET_SYNTAX)
+	rm -fr $(HOME)/.vimrc \
+		$(TARGET_COLORS) \
+		$(TARGET_SYNTAX) \
+		$(HOME)/.vim/after/ftplugin

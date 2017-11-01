@@ -1,6 +1,22 @@
 Change Log
 ==========
 
+v0.6 (2017-11-01)
+-----------------
+* Documentation: corrections & formatting, describe new installation process,
+  new functions, and mappings.
+* Installation changed: ``deploy.sh`` removed and new Makefile instructions for
+  local and remote installation support.
+* Python syntax highlighting: extended support for ``Python 3.6``.
+* New mapping: ``<F3>`` automatically corrects & formats the current file.
+* Moves Python-specific configuration.
+* ``deploy.sh`` deleted.
+* Python: Highlight for ``__dict__``
+* Remove trailing white spaces in all files upon saving (not just ``*.py``
+  files).
+* ``autowrite`` & ``autowriteall``.
+* Removed double tab mapping (``<tab><tab>`` no longer equals ``<esc>``).
+
 v0.5 (2017-03-18)
 -----------------
 * Makefile: Improved installation and more (deploy, install extras, etc.).
