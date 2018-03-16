@@ -4,7 +4,7 @@
 " Created: 11 Jan 2014
 """"""""""""""""""""""""""""
 
-set bg=dark
+set background=dark
 hi clear
 if exists("syntax_on")
 	syntax reset
@@ -19,7 +19,7 @@ highlight User2 ctermbg=darkred ctermfg=white cterm=bold
 highlight User3 ctermbg=188 ctermfg=236 cterm=bold
 highlight User4 ctermbg=248 ctermfg=236 cterm=bold
 
-highlight Normal ctermbg=232 ctermfg=white cterm=none
+highlight Normal ctermfg=188 ctermbg=237 guifg=#dcdccc guibg=#3f3f3f
 highlight ErrorMsg ctermbg=darkred ctermfg=white cterm=bold
 highlight Visual ctermbg=darkblue ctermfg=white cterm=none
 highlight VisualNOS ctermbg=darkblue ctermfg=white cterm=none
