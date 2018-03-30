@@ -49,6 +49,10 @@ highlight TabLineSel ctermbg=024 ctermfg=white cterm=bold
 highlight TabLine ctermbg=245 ctermfg=white cterm=bold
 highlight TabLineFill ctermbg=244 cterm=none
 
+highlight SpellBad ctermbg=none ctermfg=red cterm=bold
+highlight SpellCap ctermbg=none ctermfg=red cterm=bold
+highlight SpellLocal ctermbg=none ctermfg=yellow cterm=bold
+
 "" Menu bar colours
 highlight Pmenu ctermbg=023 ctermfg=220 cterm=none
 highlight PmenuSel ctermbg=029 ctermfg=214 cterm=bold
