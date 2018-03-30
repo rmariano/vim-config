@@ -1,4 +1,4 @@
-" Vim color file
+" Vim colour file
 " Maintainer: Mariano Anaya
 " Last Change:
 " Created: 11 Jan 2014
@@ -12,7 +12,7 @@ endif
 
 let colors_name = "tromso"
 
-"" User-defined colors
+"" User-defined colours
 "" User1 Same as StatusLine
 highlight User1 ctermbg=024 ctermfg=white cterm=bold
 highlight User2 ctermbg=darkred ctermfg=white cterm=bold
@@ -49,15 +49,15 @@ highlight TabLineSel ctermbg=024 ctermfg=white cterm=bold
 highlight TabLine ctermbg=245 ctermfg=white cterm=bold
 highlight TabLineFill ctermbg=244 cterm=none
 
-"" Menu bar colors
+"" Menu bar colours
 highlight Pmenu ctermbg=023 ctermfg=220 cterm=none
 highlight PmenuSel ctermbg=029 ctermfg=214 cterm=bold
 highlight PmenuSbar ctermbg=048
 
-"" [dev] Customized colors
+"" [dev] Customized colours
 highlight Statement	ctermbg=none ctermfg=202 cterm=bold cterm=bold
 highlight Identifier ctermbg=none  ctermfg=143 cterm=bold
-highlight Comment ctermbg=none ctermfg=196 cterm=none
+highlight Comment ctermbg=none ctermfg=blue cterm=none
 highlight Constant ctermbg=none ctermfg=117 cterm=none
 highlight type ctermfg=green cterm=none
 highlight PreProc ctermfg=magenta cterm=none
