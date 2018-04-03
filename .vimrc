@@ -5,6 +5,10 @@
 """"""""""""""""""""""""""""""
 
 set t_Co=256  "" Vim & terminal Mode in 256-colors
+if &term =~ '256color'
+    set t_ut=
+endif
+
 syntax on
 colorscheme tromso
 set number
