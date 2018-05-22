@@ -47,7 +47,7 @@ set hidden
 
 "" Where to open new windows
 set splitright
-set splitbelow
+set nosplitbelow
 
 "" Lines range visible when scrolling
 set scrolloff=10
