@@ -121,7 +121,6 @@ Features
 * Window splits properly configured
 
   * New vertical splits, to the right
-  * New horizontal splits, below.
 
   * ``<C-j>``: for moving between splits (instead of ``<C-W><C-j>``).
     Same for ``h``, ``k``, or ``l`` respectively.
