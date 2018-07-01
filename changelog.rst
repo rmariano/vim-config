@@ -1,6 +1,13 @@
 Change Log
 ==========
 
+v0.7 (2018-07-01)
+-----------------
+* Split horizontal windows, back to default.
+* Fix python files with ``back``.
+* Improve auto-formatting of Python files.
+
+
 v0.6 (2017-11-01)
 -----------------
 * Documentation: corrections & formatting, describe new installation process,
