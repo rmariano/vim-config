@@ -65,6 +65,8 @@ set autoindent
 set smartindent
 set textwidth=79
 
+set nofoldenable  "" Don't fold
+
 "" look for trailing white spaces
 nnoremap <leader>tw /\s\+$<CR>
 nnoremap <leader>w :%s/\s\+$//g<CR>
