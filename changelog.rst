@@ -1,6 +1,16 @@
 Change Log
 ==========
 
+0.8 (2018-09-08)
+----------------
+* Disable automatic fold
+* README: update for ``set nosplitbelow``
+* Run isort first, then formatting
+* Fix background inside tmux
+* Nicer highlighting for misspelled words
+* Comments in blue
+* Lighter background colour
+
 v0.7 (2018-07-01)
 -----------------
 * Split horizontal windows, back to default.
