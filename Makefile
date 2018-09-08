@@ -100,7 +100,7 @@ changelog:
 release: $(PRECHANGELOG)
 	mv {pre,}changelog.rst
 	git add .
-	git commit
+	git commit -S -m "Release $(TAG)"
 	git tag -s $(TAG)
 
 .PHONY: clean
