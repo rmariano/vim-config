@@ -1,8 +1,12 @@
 "" Settings for Python
 
-"" Shortcut for commenting out lines in python files
-nnoremap <buffer> <localleader>c I# <ESC>
+"" Comment / uncomment files
+noremap  <leader>c :s/^/#/g<CR>:let @/ = ""<CR>
+vnoremap <leader>c :s/^/#/g<CR>:let @/ = ""<CR>
+noremap  <leader>u :s/^#//g<CR>:let @/ = ""<CR>
+vnoremap <leader>u :s/^#//g<CR>:let @/ = ""<CR>
 
+"" Adjust file
 function! AutofixPy()
     echom "Correcting Python file"
     if executable("isort")

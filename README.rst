@@ -67,10 +67,10 @@ files for this project (not the extra packages, though).
 
 Features
 --------
+The leader key (``<leader>``) can be customised, but it's mapped to ``-`` by
+default.
 
-* `PEP-8 <https://www.python.org/dev/peps/pep-0008/>`_ general rules of text:
-  automatically handling spaces instead of tabs, proper indentation, wrap text
-  to 79 columns, margin set (toggle-able), etc.
+* ``<leader>`` + ``j``: Toggle the margin at the column number set by ``textwidth``.
 
 * ``<leader>`` + ``tw`` will highlight trailing white spaces.
 
@@ -79,19 +79,22 @@ Features
 
 * ``autoindent`` & ``smartindent``.
 
+* ``<leader>`` + ``c`` Will *comment* out lines of code, and
+  ``<leader>`` + ``u`` will *uncomment* them out. Both apply to normal and visual modes.
+
 * Function keys
 
   * ``<F2>``: toggle spell check.
   * ``<F3>``: Correct files automatically
 
     * XML: auto-format & indent.
-    * Python: PEP-8, sort imports, and run ``flake8`` checks.
+    * Python: PEP-8, sort imports, format with black, and run ``flake8`` checks.
 
-  * ``<F4>``: toggle paste mode
+  * ``<F4>``: toggle paste mode.
 
-* ``<leader>`` +  ``nh`` as a shortcut for ``:nohlsearch``
-* ``<leader>`` + ``p`` is mapped to toggle paste mode, with the label
-  indicating in the status bar if is active or not.
+  * ``<F7>``: Run checks in the file (currently only Python is supported).
+
+* ``<leader>`` +  ``nh`` as a shortcut for ``:nohlsearch`` (No highlight).
 
 * A colour scheme I like.
 
@@ -102,8 +105,8 @@ Features
   ``FIXME``, rendering the results in a quick fix window. Warning: searches
   recursively.
 
-* ``<leader>`` + ``n``, ``<leader>`` + ``p`` for moving to the next and
-  previous entries in the quick-fix window, respectively. ``<leader>`` + ``q``
+* ``<leader>`` + ``n``, ``<leader>`` + ``p`` for moving to the *next* and
+  *previous* entries in the quick-fix window, respectively. ``<leader>`` + ``q``
   for closing it.
 
 * ``<leader>`` + ``e`` to toggle line numbers (enabled by default).
@@ -181,7 +184,7 @@ In addition, take a moment to read the contributing guidelines.
 Dependencies
 ------------
 
-* Vim 7.4+
+* Vim 8+
 * Linux (Other platforms are supported on a best-effort basis).
 
 
