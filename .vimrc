@@ -1,6 +1,6 @@
 "" Vim configuration
 " Maintainer: Mariano Anaya
-" Version: 0.8
+" Version: v0.9
 " Created: 01 Jan 2014
 """"""""""""""""""""""""""""""
 

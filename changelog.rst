@@ -1,6 +1,11 @@
 Change Log
 ==========
 
+v0.9 (2019-01-01)
+-----------------
+* Basic configuration support for Rust
+* Multi-line comments for Python
+
 0.8 (2018-09-08)
 ----------------
 * Disable automatic fold
