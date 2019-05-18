@@ -14,8 +14,8 @@ function! AutofixPy()
         execute ":silent %!isort - 2>/dev/null"
     endif
     if executable("black")
-        echom "Calling black"
-        execute ":silent %!black -l79 - 2> /dev/null"
+        echom printf("Formatting with black (margin at %d columns)", &textwidth)
+        execute printf(":silent %%!black -l %d - 2> /dev/null", &textwidth)
     elseif executable("autopep8")
         echom "Calling autopep8"
         execute ":silent %!autopep8 - 2> /dev/null"
