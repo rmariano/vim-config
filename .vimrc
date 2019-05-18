@@ -63,7 +63,7 @@ set novisualbell
 
 set autoindent
 set smartindent
-set textwidth=79
+set textwidth=120
 
 set nofoldenable  "" Don't fold
 
