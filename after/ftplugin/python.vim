@@ -9,10 +9,6 @@ vnoremap <leader>u :s/^#//g<CR>:let @/ = ""<CR>
 "" Adjust file
 function! AutofixPy()
     echom "Correcting Python file"
-    if executable("isort")
-        echom "Sorting imports"
-        execute ":silent %!isort - 2>/dev/null"
-    endif
     if executable("black")
         echom printf("Formatting with black (margin at %d columns)", &textwidth)
         execute printf(":silent %%!black -l %d - 2> /dev/null", &textwidth)
