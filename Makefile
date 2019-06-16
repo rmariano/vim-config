@@ -19,8 +19,8 @@ REMOTELOC := $(REPO_URL)/$(BRANCH)
 SOURCE_COLORS := $(PWD)/colors/tromso.vim
 TARGET_COLORS := $(COLORS_DIR)/tromso.vim
 
-SOURCE_SYNTAX := $(PWD)/syntax/python.vim
-TARGET_SYNTAX := $(SYNTAX_DIR)/python.vim
+SOURCE_SYNTAX := $(PWD)/syntax/*.vim
+TARGET_SYNTAX := $(SYNTAX_DIR)
 PRECHANGELOG = prechangelog.rst
 YELLOW := \e[93m
 RED := \e[91m
@@ -36,10 +36,10 @@ dev-deploy: dirs
 	ln -sfn $(PWD)/after/ftplugin/*.vim $(HOME)/.vim/after/ftplugin/
 
 .PHONY: deploy
-deploy: dirs clean
+deploy: clean dirs
 	cp -f $(PWD)/.vimrc $(HOME)/.vimrc
 	cp -f $(SOURCE_COLORS) $(TARGET_COLORS)
-	cp -f $(SOURCE_SYNTAX) $(TARGET_SYNTAX)
+	cp -fa $(SOURCE_SYNTAX) $(TARGET_SYNTAX)
 	cp -fa $(PWD)/after/ftplugin $(HOME)/.vim/after
 
 .PHONY: dirs
