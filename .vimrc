@@ -179,3 +179,8 @@ autocmd FileType xml map <F3> :call FormatXML()<CR>
 autocmd BufWritePre * :%s/\s\+$//e
 "" Python: Highlight everything
 let g:python_highlight_all = 1
+
+augroup cython_ft
+    au!
+    autocmd BufNewFile,BufRead *.{pyx,pxd} set ft=cython
+augroup END
