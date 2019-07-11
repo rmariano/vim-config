@@ -45,6 +45,9 @@ set autowrite
 set autowriteall
 set hidden
 
+set nomodeline
+set nomodelineexpr
+
 "" Where to open new windows
 set splitright
 set nosplitbelow
