@@ -1,6 +1,16 @@
 Change Log
 ==========
 
+v0.10 (2019-07-11)
+----=-------------
+* Security fix: Disable ``modeline`` (Fixes#55)
+* Initial support for Cython
+* Makefile: fix installation for syntax files
+* Remove isort from Python auto-fixing file
+* SQL formatting file
+* Set text width to 120
+* [fix] Use the correct line length in black
+
 v0.9 (2019-01-01)
 -----------------
 * Basic configuration support for Rust
