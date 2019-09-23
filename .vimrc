@@ -176,12 +176,21 @@ set statusline=%!SetCustomStatusLine('')
 map <F2> :call ToggleLangCheck()<CR>
 set pastetoggle=<F4>
 
-nnoremap <leader>e :set number!<CR>
-autocmd FileType xml map <F3> :call FormatXML()<CR>
-"" Remove trailing white spaces upon saving
-autocmd BufWritePre * :%s/\s\+$//e
-"" Python: Highlight everything
+"" Other configurations
+
+""" Python: Highlight everything
 let g:python_highlight_all = 1
+""" Remove trailing white spaces upon saving
+autocmd BufWritePre * :%s/\s\+$//e
+nnoremap <leader>e :set number!<CR>
+
+""" Configurations per file type
+autocmd FileType xml map <F3> :call FormatXML()<CR>
+
+augroup yaml_ft
+  au!
+  autocmd FileType yaml setlocal shiftwidth=2 tabstop=2
+augroup END
 
 "" Set filetypy=cython according to the extension
 augroup cython_ft
