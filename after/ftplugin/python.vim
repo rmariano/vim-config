@@ -20,3 +20,5 @@ function! AutofixPy()
 endfunction
 
 map <F3> :call AutofixPy()<CR>
+"" Do not automatically wrap code to the max length
+setlocal nowrap
