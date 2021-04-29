@@ -197,3 +197,6 @@ augroup cython_ft
     au!
     autocmd BufNewFile,BufRead *.{pyx,pxd,pxi} set filetype=cython
 augroup END
+
+"" No error bell
+set noerrorbells visualbell t_vb=
