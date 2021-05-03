@@ -30,6 +30,8 @@ set softtabstop=4
 "" Enable W for saving as an alias
 command! W w
 
+"" New regex engine
+set regexpengine=0
 filetype plugin indent on
 
 "" set <leader> as -
