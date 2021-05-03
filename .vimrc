@@ -1,6 +1,6 @@
 "" Vim configuration
 " Maintainer: Mariano Anaya
-" Version: v0.10
+" Version: v0.13
 " Created: 01 Jan 2014
 """"""""""""""""""""""""""""""
 
@@ -30,6 +30,8 @@ set softtabstop=4
 "" Enable W for saving as an alias
 command! W w
 
+"" New regex engine
+set regexpengine=0
 filetype plugin indent on
 
 "" set <leader> as -
@@ -197,3 +199,6 @@ augroup cython_ft
     au!
     autocmd BufNewFile,BufRead *.{pyx,pxd,pxi} set filetype=cython
 augroup END
+
+"" No error bell
+set noerrorbells visualbell t_vb=

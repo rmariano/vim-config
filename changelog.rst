@@ -1,8 +1,17 @@
 Change Log
 ==========
 
+v0.13 (2021-05-03)
+------------------
+* Better support for Cython
+* Set shift width of 2 for YAML files
+* Fixes
+ * Set latest regexp engine (performance)
+ * `set nonomodeline{,expr}` fixes security issues
+ * Disable error bell
+
 v0.10 (2019-07-11)
-----=-------------
+------------------
 * Security fix: Disable ``modeline`` (Fixes#55)
 * Initial support for Cython
 * Makefile: fix installation for syntax files
