@@ -1,3 +1,4 @@
+SHELL := /bin/bash
 COLORS_DIR := $(HOME)/.vim/colors
 SYNTAX_DIR := $(HOME)/.vim/syntax
 PACKAGES_DIR := $(HOME)/.vim/pack/lplugins/start
@@ -86,9 +87,9 @@ install: dirs
 .PHONY: changelog
 changelog:
 	@echo "Change Log" >> $(PRECHANGELOG)
-	@echo -e "==========\n" >> $(PRECHANGELOG)
+	@echo "==========" >> $(PRECHANGELOG)
 	@echo "$(TAG) ($(shell date --rfc-3339=date))" >> $(PRECHANGELOG)
-	@echo "-----------------" >> $(PRECHANGELOG)
+	@echo "------------------" >> $(PRECHANGELOG)
 	@git log --no-merges master.. --oneline --pretty=format:"* %s" >> $(PRECHANGELOG)
 	@echo -ne "\n\n" >> $(PRECHANGELOG)
 	@tail -n +4 changelog.rst >> $(PRECHANGELOG)
