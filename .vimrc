@@ -155,7 +155,7 @@ endfunction
 
 function! ToggleLangCheck()
     if !&spell
-        setlocal spell spelllang=en_gb
+        setlocal spell spelllang=en_us
         set statusline=%!SetCustomStatusLine('[spell]')
     else
         setlocal nospell
