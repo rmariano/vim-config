@@ -168,11 +168,24 @@ function! FormatXML()
     echom "Formatting XML file"
     execute ":silent %!xmllint --format --recover - 2>/dev/null"
 endfunction
-"" End function definitions
+
+function! CopyContentToClipboard()
+    if executable("clip.exe")
+        execute ":silent '<,'>w !clip.exe"
+    elseif executable("xclip")
+        execute ":silent '<,'>w !xclip"
+    elseif executable("pbcopy")
+        execute ":silent '<,'>w !pbcopy"
+    endif
+endfunction
+"" End of function definitions
 
 "" Mark the limit of <text-width>
 nnoremap <leader>j :call TogglePageLimit()<CR>
 nnoremap ;t :call SearchDevTags()<CR>
+
+"" Copy selected content (visual model) to clipboard
+vnoremap <C-C> :call CopyContentToClipboard()<CR>
 
 set statusline=%!SetCustomStatusLine('')
 map <F2> :call ToggleLangCheck()<CR>

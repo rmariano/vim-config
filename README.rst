@@ -130,6 +130,8 @@ default.
   * ``<C-j>``: for moving between splits (instead of ``<C-W><C-j>``).
     Same for ``h``, ``k``, or ``l`` respectively.
 
+* `Ctrl` + `C`: Copy selected content to clipboard.
+
 * Other features
 
   * ``scrolloff=10``: offset of 10 lines when scrolling
