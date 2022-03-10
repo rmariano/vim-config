@@ -189,11 +189,6 @@ nnoremap <leader>e :set number!<CR>
 """ Configurations per file type
 autocmd FileType xml map <F3> :call FormatXML()<CR>
 
-augroup yaml_ft
-  au!
-  autocmd FileType yaml setlocal shiftwidth=2 tabstop=2
-augroup END
-
 "" Set filetypy=cython according to the extension
 augroup cython_ft
     au!
