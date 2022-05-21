@@ -155,7 +155,7 @@ endfunction
 
 function! ToggleLangCheck()
     if !&spell
-        setlocal spell spelllang=en_gb
+        setlocal spell spelllang=en_us
         set statusline=%!SetCustomStatusLine('[spell]')
     else
         setlocal nospell
@@ -168,11 +168,24 @@ function! FormatXML()
     echom "Formatting XML file"
     execute ":silent %!xmllint --format --recover - 2>/dev/null"
 endfunction
-"" End function definitions
+
+function! CopyContentToClipboard()
+    if executable("clip.exe")
+        execute ":silent '<,'>w !clip.exe"
+    elseif executable("xclip")
+        execute ":silent '<,'>w !xclip"
+    elseif executable("pbcopy")
+        execute ":silent '<,'>w !pbcopy"
+    endif
+endfunction
+"" End of function definitions
 
 "" Mark the limit of <text-width>
 nnoremap <leader>j :call TogglePageLimit()<CR>
 nnoremap ;t :call SearchDevTags()<CR>
+
+"" Copy selected content (visual model) to clipboard
+vnoremap <C-C> :call CopyContentToClipboard()<CR>
 
 set statusline=%!SetCustomStatusLine('')
 map <F2> :call ToggleLangCheck()<CR>
@@ -188,11 +201,6 @@ nnoremap <leader>e :set number!<CR>
 
 """ Configurations per file type
 autocmd FileType xml map <F3> :call FormatXML()<CR>
-
-augroup yaml_ft
-  au!
-  autocmd FileType yaml setlocal shiftwidth=2 tabstop=2
-augroup END
 
 "" Set filetypy=cython according to the extension
 augroup cython_ft

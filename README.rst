@@ -11,7 +11,7 @@ a particular configuration for improved productivity.
 The goal is to develop a good configuration for the Vim editor, tailored
 for Python development.
 
-It does not change the behaviour of VIM, since this configuration only
+It does not change the behavior of VIM, since this configuration only
 adds comfortable shortcuts, and settings that are recommended for
 software development (coding good practices).
 
@@ -67,7 +67,7 @@ files for this project (not the extra packages, though).
 
 Features
 --------
-The leader key (``<leader>``) can be customised, but it's mapped to ``-`` by
+The leader key (``<leader>``) can be customized, but it's mapped to ``-`` by
 default.
 
 * ``<leader>`` + ``j``: Toggle the margin at the column number set by ``textwidth``.
@@ -96,7 +96,9 @@ default.
 
 * ``<leader>`` +  ``nh`` as a shortcut for ``:nohlsearch`` (No highlight).
 
-* A colour scheme I like.
+* A color scheme I like.
+
+* Customizations for certain file types: Python, YAML, XML, and more to come over time.
 
 * A status line with useful information (file name with path, modification
   flag, file type, column, lines, and position (in %).
@@ -128,6 +130,8 @@ default.
   * ``<C-j>``: for moving between splits (instead of ``<C-W><C-j>``).
     Same for ``h``, ``k``, or ``l`` respectively.
 
+* `Ctrl` + `C`: Copy selected content to clipboard.
+
 * Other features
 
   * ``scrolloff=10``: offset of 10 lines when scrolling
@@ -135,21 +139,21 @@ default.
   * Silent bells
   * Set hidden buffers
 
-Colour scheme
--------------
+Color scheme
+------------
 
-The colour scheme requires the terminal to support 256 colours. Most of the
+The color scheme requires the terminal to support 256 colors. Most of the
 terminals already support this, but some terminal multiplexers like ``tmux``
 might require to be run as: ``tmux -2`` in order to support this.
 
 In addition, just the command-line classic Vim version is supported, so no
-support for ``Gvim`` or graphical versions is included for the colour scheme,
+support for ``Gvim`` or graphical versions is included for the color scheme,
 although pull requests are welcomed.
 
 Captures
 ^^^^^^^^
 
-Here are some examples of how the colour scheme looks like.
+Here are some examples of how the color scheme looks like.
 
 .. image:: https://rmariano.github.io/itarch/vim-capture1.png
    :target: https://rmariano.github.io/itarch/vim-capture1.png
@@ -185,7 +189,7 @@ Dependencies
 ------------
 
 * Vim 8+
-* Linux (Other platforms are supported on a best-effort basis).
+* Linux, OSX (Other platforms are supported on a best-effort basis).
 
 
 External plug-ins
