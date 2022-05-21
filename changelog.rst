@@ -1,5 +1,10 @@
 Change Log
 ==========
+v0.14 (2022-05-21)
+------------------
+* Upgraded Python syntax file to Py3.10
+* Better YAML support
+* Initial clipboard support.
 
 v0.13 (2021-05-03)
 ------------------
