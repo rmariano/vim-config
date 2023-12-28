@@ -8,15 +8,8 @@ vnoremap <leader>u :s/^#//g<CR>:let @/ = ""<CR>
 
 "" Adjust file
 function! AutofixPy()
-    echom "Correcting Python file"
-    if executable("black")
-        echom printf("Formatting with black (margin at %d columns)", &textwidth)
-        execute printf(":silent %%!black -l %d - 2> /dev/null", &textwidth)
-    elseif executable("autopep8")
-        echom "Calling autopep8"
-        execute ":silent %!autopep8 - 2> /dev/null"
-    endif
-    call Flake8()
+    echom "Formatting Python file"
+    execute ":silent %!python3 -m ruff format - 2> /dev/null"
 endfunction
 
 map <F3> :call AutofixPy()<CR>
