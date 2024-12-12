@@ -29,6 +29,8 @@ set softtabstop=4
 
 "" Enable W for saving as an alias
 command! W w
+command! Wq wq
+command! WQ wq
 
 "" New regex engine
 set regexpengine=0
