@@ -18,6 +18,13 @@ It does not change the behavior of VIM, since this configuration only adds comfo
 
 ## Installation
 
+## NeoVim support
+For Neovim, follow these steps:
+1. Install [plug](https://github.com/junegunn/vim-plug)
+2. `cp init.vim ~/.config/nvim/`  (create dir as necessary)
+
+Remaining installation instructions should work.
+
 ### Instant
 
 Copy and paste the following command in your terminal:
