@@ -191,7 +191,6 @@ vnoremap <C-C> :call CopyContentToClipboard()<CR>
 
 set statusline=%!SetCustomStatusLine('')
 map <F2> :call ToggleLangCheck()<CR>
-set pastetoggle=<F4>
 
 "" Other configurations
 
