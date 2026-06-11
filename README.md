@@ -76,7 +76,6 @@ The leader key (`<leader>`) can be customized, but it's mapped to `-` by default
   - `<F3>`: Correct files automatically
     - XML: auto-format & indent.
     - Python: PEP-8, sort imports, format with black, and run `flake8` checks.
-  - `<F4>`: toggle paste mode.
   - `<F7>`: Run checks in the file (currently only Python is supported).
 
 - `<leader>` + `nh` as a shortcut for `:nohlsearch` (No highlight).
